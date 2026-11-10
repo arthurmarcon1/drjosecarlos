@@ -24,7 +24,8 @@ Stack: HTML + CSS (`css/base.css` com o que é comum às 3 páginas; o específi
 
 ## Dados confirmados (do PDF do curso)
 - Imersão Esthetic Pro, sexta (tarde e noite: aula teórica com 17 temas + happy hour) e sábado (manhã: hands-on de preparos e restaurações em resina; tarde: cimentação de laminados cerâmicos ao vivo).
-- Preços: reserva R$ 200 (abatida), à vista R$ 3.800, cartão até 12x total R$ 4.600, entrada R$ 1.600 + 12x R$ 250 no boleto. Garantia de 7 dias, certificado, suporte via WhatsApp.
+- Formas de pagamento: reserva de vaga (abatida do total), à vista, cartão em até 12x, entrada + 12x no boleto. Garantia de 7 dias, certificado, suporte via WhatsApp.
+- **Valores do curso NÃO aparecem no site** (decisão de 10/11/2026). Os cards de investimento usam o placeholder `[valor]` e a mensagem do WhatsApp leva só a forma de pagamento. Não reintroduzir preços sem pedido explícito.
 - Local: U.NOS Coworking em Saúde, Rua Pinheiro Machado, 2350, sala 610, Santa Maria/RS.
 - Dr.: natural de Itaqui/RS, Cirurgião-Dentista pela UFN em 2018, especialização em Implantodontia, membro da Sociedade Brasileira de Odontologia Reconstrutiva.
 

@@ -12,6 +12,7 @@ Ao receber o dado, substituir o placeholder (e remover o destaque `ph-hold` / `d
 | Início (`index.html`) | Rodapé | `CRO-RS [número]` | Número do CRO do Dr. José Carlos |
 | Cursos (`cursos.html`) | Hero, chip da data | `[data da turma]` | Datas (sexta e sábado) da Turma 2027 |
 | Cursos (`cursos.html`) | Investimento, texto abaixo do título | `[nº de vagas]` | Número de vagas da Turma 2027 |
+| Cursos (`cursos.html`) | Investimento, 4 cards (reserva, à vista, cartão, entrada + boleto) | `[valor]` | Valores do curso foram retirados do protótipo. Decidir se voltam a aparecer ou se ficam "sob consulta" |
 | Cursos (`cursos.html`) | Rodapé | `CRO-RS [número]` | Número do CRO (mesmo da home) |
 | Laboratório (`laboratorio.html`) | "O que fazemos" | `[lista de serviços a confirmar]` | Lista real de serviços do CS LAB (a lista atual é provisória: laminados e lentes, coroas cerâmicas, enceramento e mock-up, provisórios, peças sobre implante) |
 | Laboratório (`laboratorio.html`) | "Conheça o laboratório", galeria | `[Foto da bancada do CS LAB]` | Foto real da bancada do laboratório |
@@ -22,7 +23,6 @@ Ao receber o dado, substituir o placeholder (e remover o destaque `ph-hold` / `d
 
 - **Instagram `@cacaloschenini`** (home: seção Instagram e Contato). Confirmar se é o perfil oficial a divulgar.
 - **Sigla "SBOR"** (home: hero e "Sobre"). Confirmar se é a sigla usada pela Sociedade Brasileira de Odontologia Reconstrutiva.
-- **Parcela do cartão "12x R$ 383,33"** (cursos: Investimento). É o total de R$ 4.600 dividido por 12; confirmar se o cartão é sem juros nesse valor.
 - **Grupo de WhatsApp da turma e dúvidas no privado** (cursos: Pós-curso e FAQ). Confirmar se continua valendo para 2027.
 - **Fotos dos casos e das edições** vieram do PDF do curso, com resolução limitada. Trocar pelos originais.
 - **Depoimentos** de pacientes e alunos: o site não tem nenhum ainda. Só incluir com textos reais e autorização.

@@ -42,10 +42,10 @@
   var form = document.querySelector('form.form');
   if (form) {
     var OPTS = [
-      { t: 'Reserva de vaga', s: 'R$ 200 (abatido do total)' },
-      { t: 'À vista', s: 'R$ 3.800' },
-      { t: 'Cartão em até 12x', s: 'Total R$ 4.600' },
-      { t: 'Entrada + boleto', s: 'R$ 1.600 + 12x R$ 250' }
+      { t: 'Reserva de vaga' },
+      { t: 'À vista' },
+      { t: 'Cartão em até 12x' },
+      { t: 'Entrada + boleto' }
     ];
     var pag = 1;
     var optBtns = form.querySelectorAll('.opt');
@@ -58,7 +58,7 @@
         'Nome: ' + val('f-nome'),
         'Cidade: ' + val('f-cidade'),
         'CRO: ' + val('f-cro'),
-        'Forma de pagamento: ' + OPTS[pag].t + ', ' + OPTS[pag].s
+        'Forma de pagamento: ' + OPTS[pag].t
       ].join('\n'));
     };
     optBtns.forEach(function (b, j) { b.addEventListener('click', function () { pag = j; update(); }); });

@@ -121,6 +121,7 @@
 .pr-k{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
 .pr-s{margin-top:6px;font-size:12.5px;color:var(--mu)}
 .pr-v{margin-top:30px;font-family:Montserrat,system-ui,sans-serif;font-size:40px;line-height:1;letter-spacing:-.02em;font-weight:300}
+.pr-v .ph-hold{font-size:20px;letter-spacing:.02em}
 .pr-v small{font-family:Montserrat,sans-serif;font-size:14px;letter-spacing:0;margin-right:4px;vertical-align:top;position:relative;top:6px}
 .pr-x{margin-top:12px;font-size:13.5px;line-height:1.55;color:var(--mu);flex:1}
 .pr .btn{margin-top:26px;width:100%}
@@ -399,7 +400,7 @@
 <div class="pr rv">
 <p class="pr-k">Reserva de vaga</p>
 <p class="pr-s">Para garantir o teu lugar</p>
-<p class="pr-v"><small>R$</small>200</p>
+<p class="pr-v"><span class="ph-hold">[valor]</span></p>
 <p class="pr-x">Esse valor reserva a tua vaga e é abatido do valor total do curso.</p>
 <a class="btn btn-dk" href="#inscricao">Reservar</a>
 </div>
@@ -407,22 +408,22 @@
 <span class="pr-tag">Melhor condição</span>
 <p class="pr-k">À vista</p>
 <p class="pr-s">Curso completo</p>
-<p class="pr-v"><small>R$</small>3.800</p>
+<p class="pr-v"><span class="ph-hold dark-hold">[valor]</span></p>
 <p class="pr-x">Pagamento único do curso completo.</p>
 <a class="btn btn-v" href="#inscricao">Quero à vista</a>
 </div>
 <div class="pr rv">
 <p class="pr-k">Cartão de crédito</p>
 <p class="pr-s">Em até 12x</p>
-<p class="pr-v"><small>12x R$</small>383,33</p>
-<p class="pr-x">Total de R$ 4.600,00 parcelado no cartão.</p>
+<p class="pr-v"><span class="ph-hold">[valor]</span></p>
+<p class="pr-x">Pagamento parcelado em até 12x no cartão.</p>
 <a class="btn btn-dk" href="#inscricao">Parcelar</a>
 </div>
 <div class="pr rv">
 <p class="pr-k">Entrada + boleto</p>
 <p class="pr-s">Entrada + 12 parcelas</p>
-<p class="pr-v"><small>R$</small>1.600</p>
-<p class="pr-x">De entrada, mais 12x de R$ 250,00 no boleto.</p>
+<p class="pr-v"><span class="ph-hold">[valor]</span></p>
+<p class="pr-x">Uma entrada mais 12 parcelas no boleto.</p>
 <a class="btn btn-dk" href="#inscricao">Escolher boleto</a>
 </div>
 </div>
@@ -451,7 +452,7 @@
 
 <details>
 <summary>O valor da reserva é descontado do curso?<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></summary>
-<p>Sim. Os R$ 200,00 da reserva garantem a tua vaga e são abatidos do valor completo do curso.</p>
+<p>Sim. O valor da reserva garante a tua vaga e é abatido do valor completo do curso.</p>
 </details>
 
 <details>
@@ -500,17 +501,17 @@
 <div class="fld"><label id="pag-l">Forma de pagamento</label>
 <div class="opts" role="group" aria-labelledby="pag-l">
 
-<button type="button" class="opt " aria-pressed="false"><b>Reserva de vaga</b><span>R$ 200 (abatido do total)</span></button>
+<button type="button" class="opt " aria-pressed="false"><b>Reserva de vaga</b><span>Abatida do valor total</span></button>
 
-<button type="button" class="opt on" aria-pressed="true"><b>À vista</b><span>R$ 3.800</span></button>
+<button type="button" class="opt on" aria-pressed="true"><b>À vista</b><span>Pagamento único</span></button>
 
-<button type="button" class="opt " aria-pressed="false"><b>Cartão em até 12x</b><span>Total R$ 4.600</span></button>
+<button type="button" class="opt " aria-pressed="false"><b>Cartão em até 12x</b><span>Parcelado no cartão</span></button>
 
-<button type="button" class="opt " aria-pressed="false"><b>Entrada + boleto</b><span>R$ 1.600 + 12x R$ 250</span></button>
+<button type="button" class="opt " aria-pressed="false"><b>Entrada + boleto</b><span>Entrada + 12x no boleto</span></button>
 
 </div>
 </div>
-<a class="btn btn-v" href="https://wa.me/5555997167672?text=Ol%C3%A1%2C%20Dr.%20Jos%C3%A9%20Carlos!%20Quero%20me%20inscrever%20na%20Imers%C3%A3o%20Esthetic%20Pro%202027.%0A%0ANome%3A%20(n%C3%A3o%20informado)%0ACidade%3A%20(n%C3%A3o%20informado)%0ACRO%3A%20(n%C3%A3o%20informado)%0AForma%20de%20pagamento%3A%20%C3%80%20vista%2C%20R%24%203.800" target="_blank" rel="noopener">Enviar inscrição pelo WhatsApp <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="btn btn-v" href="https://wa.me/5555997167672?text=Ol%C3%A1%2C%20Dr.%20Jos%C3%A9%20Carlos!%20Quero%20me%20inscrever%20na%20Imers%C3%A3o%20Esthetic%20Pro%202027.%0A%0ANome%3A%20(n%C3%A3o%20informado)%0ACidade%3A%20(n%C3%A3o%20informado)%0ACRO%3A%20(n%C3%A3o%20informado)%0AForma%20de%20pagamento%3A%20%C3%80%20vista" target="_blank" rel="noopener">Enviar inscrição pelo WhatsApp <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 <p class="form-n">Garantia de 7 dias · Certificado · Suporte via WhatsApp</p>
 </form>
 </div>
