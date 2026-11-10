@@ -15,7 +15,7 @@ Stack: HTML + CSS (no `<head>` de cada página) + `js/app.js` (vanilla). Deploy 
 
 ## Regras do projeto (sempre seguir)
 - **Nunca usar travessão (— ou –)** em nenhum texto. Reescrever a frase com vírgula, ponto, dois-pontos ou parênteses.
-- Fonte limpa, sem serifa (ver PROMPTS / decisão de fonte). Nada de fonte Didone/Bodoni.
+- Fonte: Montserrat em todo o site (coerente com o logo Esthetic Pro). Títulos grandes em peso 300 com letter-spacing negativo; destaques (`<em>`) só com cor de acento + peso 600, sem itálico. Nada de fonte serifada, Didone ou Bodoni.
 - Border-radius máximo 8px. Sem glassmorphism. Sem texto em gradiente. Nada com cara de SaaS genérico.
 - Textos em pt-BR. Página de cursos fala com "tu" (voz do próprio Dr.); páginas de paciente usam "você".
 - Informação que não temos fica como placeholder entre colchetes e destacada, ex.: `[CRO-RS número]`, `[Endereço do consultório]`. Nunca inventar dado (preço, data, número de alunos, depoimento).

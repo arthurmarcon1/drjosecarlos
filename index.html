@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Dr. José Carlos Schenini | Reabilitação Oral</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&amp;family=Montserrat:wght@300;400;500;600;700&amp;display=swap"><style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"><style>
 body{margin:0;background:#0A0A0B}
 *{box-sizing:border-box}
 a{color:inherit}
@@ -16,8 +16,8 @@ a{color:inherit}
 .dark .eyebrow{color:var(--mud)}
 h1,h2,h3,p{margin:0}
 h1,h2,h3{font-weight:400}
-.h2{font-family:'Bodoni Moda',Didot,serif;font-size:clamp(38px,4.8vw,66px);line-height:1.02;letter-spacing:-.015em}
-.h2 em{font-style:italic;color:var(--v-ink)}
+.h2{font-family:Montserrat,system-ui,sans-serif;font-size:clamp(32px,4vw,56px);line-height:1.08;letter-spacing:-.03em;font-weight:300} /* [revisar: alternativa peso 200 para ainda mais leve] */
+.h2 em{font-style:normal;color:var(--v-ink);font-weight:600}
 .dark .h2 em{color:var(--v-l)}
 .lead{font-size:17px;line-height:1.75;color:var(--mu);max-width:56ch}
 .dark .lead{color:var(--mud)}
@@ -49,14 +49,14 @@ h1,h2,h3{font-weight:400}
 .hero{position:relative;padding-top:80px;overflow:hidden}
 .hero-g{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:64px;align-items:end}
 .hero-txt{padding-bottom:88px}
-.hero h1{font-family:'Bodoni Moda',Didot,serif;font-size:clamp(48px,6.4vw,98px);line-height:.97;letter-spacing:-.025em;margin-top:28px}
-.hero h1 em{font-style:italic;color:var(--v-l)}
+.hero h1{font-family:Montserrat,system-ui,sans-serif;font-size:clamp(40px,5.2vw,80px);line-height:1.04;letter-spacing:-.035em;margin-top:28px;font-weight:300} /* [revisar: alternativa clamp(44px,5.8vw,88px) se quiser o título maior] */
+.hero h1 em{font-style:normal;color:var(--v-l);font-weight:600}
 .hero .lead{margin-top:30px}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:40px}
 .facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:64px;border-top:1px solid var(--ld)}
 .fact{padding:22px 20px 0 0}
 .fact + .fact{padding-left:20px;border-left:1px solid var(--ld)}
-.fact b{display:block;font-family:'Bodoni Moda',serif;font-weight:400;font-size:24px;color:#F2F0EC}
+.fact b{display:block;font-family:Montserrat,system-ui,sans-serif;font-weight:300;font-size:21px;color:#F2F0EC;letter-spacing:-.01em}
 .fact span{display:block;margin-top:6px;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--mud)}
 .hero-ph{position:relative;aspect-ratio:4/5.3;border-radius:6px 6px 0 0;overflow:hidden;background:#1a1a1a}
 .hero-ph img.ph{width:100%;height:100%;object-fit:cover;object-position:50% 18%;display:block;transform:scale(1.04);animation:zoomOut 2.4s cubic-bezier(.2,.7,.2,1) both}
@@ -73,7 +73,7 @@ h1,h2,h3{font-weight:400}
 
 /* marquee */
 .mq{background:var(--ink);border-top:1px solid var(--ld);border-bottom:1px solid var(--ld);overflow:hidden;white-space:nowrap;padding:26px 0;color:#DCD8D2}
-.mq-t{display:inline-flex;align-items:center;gap:44px;padding-right:44px;animation:mq 46s linear infinite;font-family:'Bodoni Moda',serif;font-style:italic;font-size:30px}
+.mq-t{display:inline-flex;align-items:center;gap:44px;padding-right:44px;animation:mq 46s linear infinite;font-family:Montserrat,system-ui,sans-serif;font-size:26px;font-weight:300;letter-spacing:-.01em}
 .mq-t i{width:8px;height:8px;background:var(--v-l);display:block;transform:rotate(45deg)}
 @keyframes mq{to{transform:translateX(-50%)}}
 
@@ -91,8 +91,8 @@ h1,h2,h3{font-weight:400}
 .ba-range{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;z-index:4}
 .ba-tag{position:absolute;bottom:16px;z-index:3;background:rgba(10,10,11,.82);color:#fff;padding:7px 11px;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;border-radius:3px;pointer-events:none}
 .ba-hint{display:flex;align-items:center;gap:10px;margin-top:16px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mu)}
-.case-n{font-family:'Bodoni Moda',serif;font-size:15px;color:var(--v-ink);letter-spacing:.1em}
-.case-t{font-family:'Bodoni Moda',serif;font-size:clamp(30px,3vw,42px);line-height:1.08;margin-top:14px}
+.case-n{font-family:Montserrat,system-ui,sans-serif;font-size:13px;color:var(--v-ink);letter-spacing:.1em;font-weight:600}
+.case-t{font-family:Montserrat,system-ui,sans-serif;font-size:clamp(26px,2.6vw,36px);line-height:1.15;margin-top:14px;font-weight:300;letter-spacing:-.02em}
 .case-d{margin-top:18px;font-size:16px;line-height:1.75;color:var(--mu)}
 .case-note{margin-top:28px;padding-top:20px;border-top:1px solid var(--ll);font-size:12.5px;line-height:1.6;color:var(--mu)}
 
@@ -100,8 +100,8 @@ h1,h2,h3{font-weight:400}
 .tl{border-top:1px solid var(--ll)}
 .tl-r{display:grid;grid-template-columns:72px minmax(0,1.05fr) minmax(0,1.35fr) 52px;gap:28px;align-items:center;padding:34px 0;border-bottom:1px solid var(--ll);text-decoration:none;color:inherit;transition:padding .35s cubic-bezier(.2,.7,.2,1),background .35s}
 .tl-r:hover{padding-left:16px;padding-right:16px;background:var(--paper2)}
-.tl-n{font-family:'Bodoni Moda',serif;font-size:18px;color:var(--v-ink)}
-.tl-t{font-family:'Bodoni Moda',serif;font-size:clamp(26px,2.5vw,36px);line-height:1.1}
+.tl-n{font-family:Montserrat,system-ui,sans-serif;font-size:14px;color:var(--v-ink);font-weight:600;letter-spacing:.06em}
+.tl-t{font-family:Montserrat,system-ui,sans-serif;font-size:clamp(22px,2.1vw,30px);line-height:1.18;font-weight:300;letter-spacing:-.02em}
 .tl-d{color:var(--mu);line-height:1.65;font-size:15.5px}
 .tl-a{width:48px;height:48px;border:1px solid var(--ll);border-radius:4px;display:flex;align-items:center;justify-content:center;transition:all .3s}
 .tl-r:hover .tl-a{background:var(--v);border-color:var(--v);color:#fff}
@@ -110,8 +110,8 @@ h1,h2,h3{font-weight:400}
 .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--ld)}
 .step{padding:40px 32px 8px 0}
 .step + .step{padding-left:32px;border-left:1px solid var(--ld)}
-.step .step-n{font-family:'Bodoni Moda',serif;font-size:64px;line-height:1;color:var(--v-l);margin:0}
-.step h3{font-family:'Bodoni Moda',serif;font-size:26px;margin-top:28px}
+.step .step-n{font-family:Montserrat,system-ui,sans-serif;font-size:56px;line-height:1;color:var(--v-l);margin:0;font-weight:300;letter-spacing:-.04em}
+.step h3{font-family:Montserrat,system-ui,sans-serif;font-size:21px;margin-top:28px;font-weight:400;letter-spacing:-.01em}
 .step p{margin-top:14px;font-size:15px;line-height:1.7;color:var(--mud)}
 
 /* sobre */
@@ -125,7 +125,7 @@ h1,h2,h3{font-weight:400}
 .sobre-sig img{width:100%;height:auto;display:block}
 .cred{list-style:none;padding:0;margin:40px 0 0;display:grid;gap:0;border-top:1px solid var(--ll)}
 .cred li{display:flex;gap:18px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--ll);font-size:15px}
-.cred b{font-family:'Bodoni Moda',serif;font-weight:400;font-size:15px;color:var(--v-ink);min-width:104px;flex:none}
+.cred b{font-family:Montserrat,system-ui,sans-serif;font-weight:600;font-size:13px;color:var(--v-ink);min-width:104px;flex:none;letter-spacing:.04em}
 
 /* frentes */
 .fr-g{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
@@ -138,7 +138,7 @@ h1,h2,h3{font-weight:400}
 .fr-lab .fr-logo{height:132px}
 .fr-k{font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--v-l)}
 .fr-lab .fr-k{color:var(--o)}
-.fr h3{font-family:'Bodoni Moda',serif;font-size:clamp(30px,3vw,42px);line-height:1.08;margin-top:16px;max-width:18ch}
+.fr h3{font-family:Montserrat,system-ui,sans-serif;font-size:clamp(26px,2.6vw,36px);line-height:1.15;margin-top:16px;max-width:18ch;font-weight:300;letter-spacing:-.02em}
 .fr p{margin-top:16px;color:#C9C5BF;line-height:1.7;max-width:44ch}
 .fr-go{display:inline-flex;align-items:center;gap:12px;margin-top:28px;font-weight:600;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;padding-bottom:6px;border-bottom:1px solid var(--v-l)}
 .fr-lab .fr-go{border-color:var(--o)}
@@ -147,12 +147,12 @@ h1,h2,h3{font-weight:400}
 
 /* insta */
 .ig{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;padding:56px 0;border-top:1px solid var(--ll)}
-.ig-h{font-family:'Bodoni Moda',serif;font-size:clamp(28px,3vw,40px);line-height:1.1}
-.ig-h a{font-style:italic;color:var(--v-ink);text-decoration:none;border-bottom:1px solid currentColor}
+.ig-h{font-family:Montserrat,system-ui,sans-serif;font-size:clamp(24px,2.6vw,34px);line-height:1.2;font-weight:300;letter-spacing:-.02em}
+.ig-h a{color:var(--v-ink);text-decoration:none;border-bottom:1px solid currentColor;font-weight:600}
 
 /* contato */
 .ct-g{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:80px;align-items:start}
-.ct-big{display:block;font-family:'Bodoni Moda',serif;font-size:clamp(40px,5vw,72px);line-height:1;margin-top:40px;text-decoration:none;color:#F2F0EC;transition:color .2s}
+.ct-big{display:block;font-family:Montserrat,system-ui,sans-serif;font-size:clamp(34px,4.4vw,64px);line-height:1.05;margin-top:40px;text-decoration:none;color:#F2F0EC;transition:color .2s;font-weight:300;letter-spacing:-.03em}
 .ct-big:hover{color:var(--v-l)}
 .ct-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--ld)}
 .ct-list li{display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--ld);align-items:flex-start}

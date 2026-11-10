@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Esthetic Pro 2027 | Imersão em Estética Dental</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&amp;family=Montserrat:wght@300;400;500;600;700&amp;display=swap"><style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"><style>
 body{margin:0;background:#0A0A0B}
 *{box-sizing:border-box}
 a{color:inherit}
@@ -16,8 +16,8 @@ h1,h2,h3{font-weight:400}
 .eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;color:var(--mud)}
 .eyebrow::before{content:"";width:28px;height:1px;background:currentColor;opacity:.6}
 .light .eyebrow{color:var(--mu)}
-.dd{font-family:'Bodoni Moda',Didot,serif;text-transform:uppercase;letter-spacing:-.005em;line-height:.98;font-size:clamp(40px,5.2vw,76px)}
-.dd em{font-style:italic;text-transform:none;color:var(--v-l)}
+.dd{font-family:Montserrat,system-ui,sans-serif;text-transform:uppercase;letter-spacing:-.01em;line-height:1.08;font-size:clamp(30px,4vw,56px);font-weight:300} /* [revisar: caixa alta mantida por coerência com o logo; alternativa sem text-transform e letter-spacing -.03em] */
+.dd em{font-style:normal;color:var(--v-l);font-weight:600}
 .light .dd em{color:var(--v-ink)}
 .lead{font-size:17px;line-height:1.75;color:var(--mud);max-width:56ch}
 .light .lead{color:var(--mu)}
@@ -64,7 +64,7 @@ h1,h2,h3{font-weight:400}
 
 /* intro */
 .intro-g{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:88px;align-items:center}
-.quote{font-family:'Bodoni Moda',serif;font-style:italic;font-size:clamp(28px,2.9vw,42px);line-height:1.25;margin-top:36px}
+.quote{font-family:Montserrat,system-ui,sans-serif;font-size:clamp(24px,2.5vw,34px);line-height:1.35;margin-top:36px;font-weight:300;letter-spacing:-.015em}
 .quote::before{content:"“";display:block;font-size:96px;line-height:.6;color:var(--v-ink);font-style:normal;margin-bottom:6px}
 .intro-sig{margin-top:36px;width:min(380px,80%)}
 .intro-sig img{width:100%;height:auto;display:block}
@@ -80,20 +80,20 @@ h1,h2,h3{font-weight:400}
 .ap-pair img{width:100%;height:100%;object-fit:cover;display:block}
 .ap-pair figcaption{position:absolute;left:10px;bottom:10px;background:rgba(10,10,11,.82);color:#fff;padding:5px 9px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;border-radius:3px}
 .ap-b{padding:24px 24px 28px}
-.ap-b h3{font-family:'Bodoni Moda',serif;font-size:24px}
+.ap-b h3{font-family:Montserrat,system-ui,sans-serif;font-size:19px;font-weight:400;letter-spacing:-.01em}
 .ap-b p{margin-top:10px;font-size:14.5px;line-height:1.65;color:var(--mud)}
 
 /* cronograma */
 .cr-g{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:20px;align-items:stretch}
 .day{border-radius:6px;padding:44px;background:var(--paper2);color:var(--tx);border:1px solid var(--ll)}
 .day-h{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding-bottom:22px;border-bottom:1px solid var(--ll)}
-.day-h h3{font-family:'Bodoni Moda',serif;text-transform:uppercase;font-size:44px;line-height:1}
+.day-h h3{font-family:Montserrat,system-ui,sans-serif;text-transform:uppercase;font-size:36px;line-height:1;font-weight:300;letter-spacing:-.01em}
 .day-h span{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--v-ink)}
 .slot{margin-top:28px}
 .slot-k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
 .topics{list-style:none;padding:0;margin:18px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px}
 .topics li{display:flex;gap:14px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--ll);font-size:14.5px;line-height:1.4}
-.topics li b{font-family:'Bodoni Moda',serif;font-weight:400;color:var(--v-ink);min-width:22px;font-size:14px}
+.topics li b{font-family:Montserrat,system-ui,sans-serif;font-weight:600;color:var(--v-ink);min-width:22px;font-size:12px}
 .hh{display:flex;gap:16px;align-items:center;margin-top:28px;padding:18px;background:var(--ink);color:#F2F0EC;border-radius:4px}
 .hh svg{flex:none;color:var(--v-l)}
 .hh p{font-size:14.5px;line-height:1.5}
@@ -105,7 +105,7 @@ h1,h2,h3{font-weight:400}
 .blk img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;filter:grayscale(1)}
 .blk::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(10,10,11,.92) 15%,rgba(10,10,11,.35))}
 .blk-k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--v-l)}
-.blk h4{margin:10px 0 0;font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(24px,2.3vw,32px);line-height:1.12}
+.blk h4{margin:10px 0 0;font-family:Montserrat,system-ui,sans-serif;font-weight:300;font-size:clamp(21px,2vw,28px);line-height:1.2;letter-spacing:-.015em}
 .live{display:inline-flex;align-items:center;gap:8px;margin-left:10px;color:#F2F0EC}
 .live i{width:8px;height:8px;background:#FF4D4D;border-radius:1px;animation:blink 1.6s ease-in-out infinite}
 @keyframes blink{50%{opacity:.25}}
@@ -121,7 +121,7 @@ h1,h2,h3{font-weight:400}
 /* happy + pos */
 .two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
 .card{border:1px solid var(--ld);border-radius:6px;padding:44px;background:var(--ink2)}
-.card h3{font-family:'Bodoni Moda',serif;text-transform:uppercase;font-size:clamp(30px,3vw,42px);line-height:1}
+.card h3{font-family:Montserrat,system-ui,sans-serif;text-transform:uppercase;font-size:clamp(26px,2.6vw,36px);line-height:1.05;font-weight:300;letter-spacing:-.01em}
 .card .k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--v-l);margin-top:18px}
 .card p.t{margin-top:16px;font-size:15.5px;line-height:1.75;color:var(--mud)}
 .pos-i{display:flex;gap:18px;padding:22px 0;border-top:1px solid var(--ld)}
@@ -135,7 +135,7 @@ h1,h2,h3{font-weight:400}
 .pr{position:relative;display:flex;flex-direction:column;border:1px solid var(--ll);border-radius:6px;padding:30px 26px;background:var(--paper2)}
 .pr-k{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
 .pr-s{margin-top:6px;font-size:12.5px;color:var(--mu)}
-.pr-v{margin-top:30px;font-family:'Bodoni Moda',serif;font-size:44px;line-height:1;letter-spacing:-.01em}
+.pr-v{margin-top:30px;font-family:Montserrat,system-ui,sans-serif;font-size:40px;line-height:1;letter-spacing:-.02em;font-weight:300}
 .pr-v small{font-family:Montserrat,sans-serif;font-size:14px;letter-spacing:0;margin-right:4px;vertical-align:top;position:relative;top:6px}
 .pr-x{margin-top:12px;font-size:13.5px;line-height:1.55;color:var(--mu);flex:1}
 .pr .btn{margin-top:26px;width:100%}
@@ -153,7 +153,7 @@ h1,h2,h3{font-weight:400}
 /* faq */
 .faq{border-top:1px solid var(--ld)}
 .faq details{border-bottom:1px solid var(--ld)}
-.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:28px 0;font-family:'Bodoni Moda',serif;font-size:clamp(21px,2vw,27px);min-height:44px}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:28px 0;font-family:Montserrat,system-ui,sans-serif;font-size:clamp(18px,1.7vw,22px);min-height:44px;font-weight:400;letter-spacing:-.01em}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary svg{flex:none;transition:transform .3s;color:var(--v-l)}
 .faq details[open] summary svg{transform:rotate(45deg)}
