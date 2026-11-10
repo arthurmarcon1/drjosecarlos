@@ -11,168 +11,148 @@
 <meta property="og:site_name" content="Dr. José Carlos Schenini">
 <meta property="og:title" content="Esthetic Pro 2027 | Imersão em Estética Dental">
 <meta property="og:description" content="Imersão Esthetic Pro 2027 com o Dr. José Carlos Schenini em Santa Maria/RS: aula teórica, hands-on de resina e cimentação de laminados cerâmicos ao vivo. Para cirurgiões-dentistas.">
-<meta property="og:image" content="https://dr-jose-carlos-schenini.vercel.app/img/esthetic-light.png">
+<meta property="og:image" content="https://dr-jose-carlos-schenini.vercel.app/img/esthetic-dark.png">
 <meta property="og:image:width" content="1400">
-<meta property="og:image:height" content="442">
+<meta property="og:image:height" content="443">
 <meta property="og:image:alt" content="Esthetic Pro, Imersão em Estética Dental">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Esthetic Pro 2027 | Imersão em Estética Dental">
 <meta name="twitter:description" content="Imersão Esthetic Pro 2027 com o Dr. José Carlos Schenini em Santa Maria/RS: aula teórica, hands-on de resina e cimentação de laminados cerâmicos ao vivo. Para cirurgiões-dentistas.">
-<meta name="twitter:image" content="https://dr-jose-carlos-schenini.vercel.app/img/esthetic-light.png">
+<meta name="twitter:image" content="https://dr-jose-carlos-schenini.vercel.app/img/esthetic-dark.png">
 <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/img/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"><link rel="stylesheet" href="/css/base.css">
 <style>
-.pg{--v:#9418D6;--v-h:#7C10B6;--v-l:#BE5CF2;--v-ink:#7A12B5;--ink:#0A0A0B;--ink2:#111113;--ink3:#19191C;--paper:#EFEDE8;--paper2:#F7F6F3;--tx:#151515;--mu:#5B5854;--mud:#ABA8A3;--ld:rgba(255,255,255,.12);--ll:rgba(20,20,20,.13);font-family:Montserrat,system-ui,sans-serif;color:#F2F0EC;background:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden;font-size:16px}
-.light{background:var(--paper);color:var(--tx)}
-.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;color:var(--mud)}
-.eyebrow::before{content:"";width:28px;height:1px;background:currentColor;opacity:.6}
-.light .eyebrow{color:var(--mu)}
-.dd{font-family:Montserrat,system-ui,sans-serif;text-transform:uppercase;letter-spacing:-.01em;line-height:1.08;font-size:clamp(30px,4vw,56px);font-weight:300} /* [revisar: caixa alta mantida por coerência com o logo; alternativa sem text-transform e letter-spacing -.03em] */
-.dd em{font-style:normal;color:var(--v-l);font-weight:600}
-.light .dd em{color:var(--v-ink)}
-.lead{font-size:17px;line-height:1.75;color:var(--mud);max-width:56ch}
-.light .lead{color:var(--mu)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 24px;border-radius:4px;font-family:Montserrat,sans-serif;font-weight:600;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:1px solid transparent;transition:background .25s,color .25s,border-color .25s;cursor:pointer;white-space:nowrap}
-.btn-v{background:var(--v);color:#fff}
-.btn-v:hover{background:var(--v-h)}
-.btn-line{border-color:rgba(242,240,236,.4);color:#F2F0EC}
+.dd{text-transform:uppercase;line-height:1.08;font-size:clamp(30px,4vw,56px);letter-spacing:-.01em;font-weight:300} /* [revisar: caixa alta mantida por coerência com o logo; alternativa sem text-transform e letter-spacing -.03em] */
+.dd em{font-style:normal;color:var(--ac-ink);font-weight:600}
 .sec-head .dd{margin-top:20px}
-.nav a.on{color:#fff;border-color:var(--v-l)}
-.hero{position:relative;min-height:760px;display:flex;align-items:center;padding:112px 0 96px;overflow:hidden;isolation:isolate;text-align:center}
+
+/* hero */
+.hero{position:relative;min-height:720px;display:flex;align-items:center;padding:104px 0 96px;overflow:hidden;isolation:isolate;text-align:center}
 .hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;filter:grayscale(1) blur(2px);transform:scale(1.06);animation:zoomOut 3s cubic-bezier(.2,.7,.2,1) both}
-.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(10,10,11,.72)}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(255,255,255,.88)}
 .hero-in{width:100%}
-.hero-logo{width:min(760px,88%);height:auto;display:block;margin:0 auto}
-.hero-year{display:inline-block;margin-top:28px;font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:#E9E6E1;padding:8px 14px;border:1px solid var(--ld);border-radius:3px}
+.hero-logo{width:min(720px,88%);height:auto;display:block;margin:0 auto}
+.hero-year{display:inline-block;margin-top:28px;font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:var(--mu);padding:8px 14px;border:1px solid var(--line2);border-radius:4px;background:#fff}
 .hero h1{font-weight:300;text-transform:uppercase;font-size:clamp(26px,3.4vw,46px);line-height:1.2;letter-spacing:.01em;margin:44px auto 0;max-width:22ch}
-.hero h1 strong{font-weight:700}
+.hero h1 strong{font-weight:600;color:var(--ac-ink)}
 .chips{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:40px}
-.chip{display:flex;align-items:center;gap:10px;padding:12px 16px;border:1px solid var(--ld);border-radius:4px;background:rgba(10,10,11,.6);font-size:13px;letter-spacing:.04em;color:#E9E6E1}
-.chip svg{color:var(--v-l);flex:none}
+.chip{display:flex;align-items:center;gap:10px;padding:12px 16px;border:1px solid var(--line);border-radius:6px;background:#fff;font-size:13px;letter-spacing:.04em;color:var(--tx)}
+.chip svg{color:var(--ac);flex:none}
 .hero-cta{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:44px}
-.d2{animation-delay:.25s}
-.d3{animation-delay:.4s}
-.d4{animation-delay:.55s}
-.d5{animation-delay:.7s}
 @keyframes zoomOut{from{transform:scale(1.16)}to{transform:scale(1.06)}}
-@keyframes write{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+.stats-sec{padding:0 0 24px;margin-top:-1px}
+
+/* intro */
 .intro-g{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:88px;align-items:center}
-.quote{font-family:Montserrat,system-ui,sans-serif;font-size:clamp(24px,2.5vw,34px);line-height:1.35;margin-top:36px;font-weight:300;letter-spacing:-.015em}
-.quote::before{content:"“";display:block;font-size:96px;line-height:.6;color:var(--v-ink);font-style:normal;margin-bottom:6px}
+.quote{font-size:clamp(24px,2.5vw,34px);line-height:1.35;margin-top:36px;letter-spacing:-.015em;font-weight:300}
+.quote::before{content:"“";display:block;font-size:96px;line-height:.6;color:var(--ac);font-style:normal;margin-bottom:6px}
 .intro-sig{margin-top:36px;width:min(380px,80%)}
 .intro-sig img{width:100%;height:auto;display:block}
-.intro-ph{position:relative;aspect-ratio:4/5;border-radius:6px;overflow:hidden}
-.intro-ph img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1)}
-.cap{position:absolute;left:0;bottom:0;padding:12px 16px 0 0;background:var(--paper);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mu)}
+.intro-ph{position:relative;aspect-ratio:4/5;border-radius:8px;overflow:hidden}
+.intro-ph img{width:100%;height:100%;object-fit:cover;display:block}
+.cap{position:absolute;left:0;bottom:0;padding:12px 16px 0 0;background:var(--bg2);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mu)}
+
+/* aprender */
 .ap-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.ap{border:1px solid var(--ld);border-radius:6px;overflow:hidden;background:var(--ink2)}
-.ap-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;background:var(--ink)}
+.ap{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}
+.ap-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;background:#fff}
 .ap-pair figure{margin:0;position:relative;aspect-ratio:1/1;overflow:hidden}
 .ap-pair img{width:100%;height:100%;object-fit:cover;display:block}
-.ap-pair figcaption{position:absolute;left:10px;bottom:10px;background:rgba(10,10,11,.82);color:#fff;padding:5px 9px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;border-radius:3px}
+.ap-pair figcaption{position:absolute;left:10px;bottom:10px;background:rgba(255,255,255,.92);color:var(--tx);padding:5px 9px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;border-radius:4px}
 .ap-b{padding:24px 24px 28px}
-.ap-b h3{font-family:Montserrat,system-ui,sans-serif;font-size:19px;font-weight:400;letter-spacing:-.01em}
-.ap-b p{margin-top:10px;font-size:14.5px;line-height:1.65;color:var(--mud)}
+.ap-b h3{font-size:19px;letter-spacing:-.01em}
+.ap-b p{margin-top:10px;font-size:14.5px;line-height:1.65;color:var(--mu)}
+
+/* cronograma */
 .cr-g{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:20px;align-items:stretch}
-.day{border-radius:6px;padding:44px;background:var(--paper2);color:var(--tx);border:1px solid var(--ll)}
-.day-h{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding-bottom:22px;border-bottom:1px solid var(--ll)}
-.day-h h3{font-family:Montserrat,system-ui,sans-serif;text-transform:uppercase;font-size:36px;line-height:1;font-weight:300;letter-spacing:-.01em}
-.day-h span{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--v-ink)}
-.slot{margin-top:28px}
+.day{border-radius:8px;padding:44px;background:#fff;color:var(--tx);border:1px solid var(--line)}
+.day-h{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.day-h h3{text-transform:uppercase;font-size:36px;line-height:1;letter-spacing:-.01em;font-weight:300}
+.day-h span{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--ac-ink)}
+.slot-c{margin-top:28px}
 .slot-k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
 .topics{list-style:none;padding:0;margin:18px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px}
-.topics li{display:flex;gap:14px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--ll);font-size:14.5px;line-height:1.4}
-.topics li b{font-family:Montserrat,system-ui,sans-serif;font-weight:600;color:var(--v-ink);min-width:22px;font-size:12px}
-.hh{display:flex;gap:16px;align-items:center;margin-top:28px;padding:18px;background:var(--ink);color:#F2F0EC;border-radius:4px}
-.hh svg{flex:none;color:var(--v-l)}
+.topics li{display:flex;gap:14px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--line);font-size:14.5px;line-height:1.4}
+.topics li b{font-weight:600;color:var(--ac-ink);min-width:22px;font-size:12px}
+.hh{display:flex;gap:16px;align-items:center;margin-top:28px;padding:18px;background:var(--ac-soft);border:1px solid var(--ac-line);color:var(--tx);border-radius:6px}
+.hh svg{flex:none;color:var(--ac)}
 .hh p{font-size:14.5px;line-height:1.5}
 .sab{display:grid;grid-template-rows:auto 1fr 1fr;gap:20px}
 .sab .day{padding:36px 36px 28px}
-.blk{position:relative;border-radius:6px;overflow:hidden;min-height:300px;display:flex;flex-direction:column;justify-content:flex-end;padding:30px;isolation:isolate;color:#F2F0EC}
-.hh-ph{margin-top:28px;aspect-ratio:16/8;border-radius:4px;overflow:hidden}
-.hh-ph img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1)}
-.blk img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;filter:grayscale(1)}
-.blk::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(10,10,11,.92) 15%,rgba(10,10,11,.35))}
-.blk-k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--v-l)}
-.blk h4{margin:10px 0 0;font-family:Montserrat,system-ui,sans-serif;font-weight:300;font-size:clamp(21px,2vw,28px);line-height:1.2;letter-spacing:-.015em}
-.live{display:inline-flex;align-items:center;gap:8px;margin-left:10px;color:#F2F0EC}
-.live i{width:8px;height:8px;background:#FF4D4D;border-radius:1px;animation:blink 1.6s ease-in-out infinite}
+.blk{position:relative;border-radius:8px;overflow:hidden;min-height:300px;display:flex;flex-direction:column;justify-content:flex-end;padding:30px;isolation:isolate;color:#fff}
+.blk img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.blk::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(30,35,40,.88) 15%,rgba(30,35,40,.15))}
+.blk-k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:#E4D6F3}
+.blk h4{margin:10px 0 0;font-weight:300;font-size:clamp(21px,2vw,28px);line-height:1.2;letter-spacing:-.015em}
+.live{display:inline-flex;align-items:center;gap:8px;margin-left:10px;color:#fff}
+.live i{width:8px;height:8px;background:#FF5A5A;border-radius:2px;animation:blink 1.6s ease-in-out infinite}
 @keyframes blink{50%{opacity:.25}}
+
+/* galeria + vídeo */
+.gal-vid{margin-bottom:12px}
 .gal{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:240px;gap:12px}
-.gal figure{margin:0;border-radius:6px;overflow:hidden;position:relative}
-.gal img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1);transition:transform 1s cubic-bezier(.2,.7,.2,1),filter .6s}
-.gal figure:hover img{transform:scale(1.05);filter:grayscale(0)}
+.gal figure{margin:0;border-radius:8px;overflow:hidden;position:relative}
+.gal img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.gal figure:hover img{transform:scale(1.05)}
 .g-a{grid-column:span 2;grid-row:span 2}
 .g-b{grid-row:span 2}
+
+/* happy + pós */
 .two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-.card{border:1px solid var(--ld);border-radius:6px;padding:44px;background:var(--ink2)}
-.card h3{font-family:Montserrat,system-ui,sans-serif;text-transform:uppercase;font-size:clamp(26px,2.6vw,36px);line-height:1.05;font-weight:300;letter-spacing:-.01em}
-.card .k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--v-l);margin-top:18px}
-.card p.t{margin-top:16px;font-size:15.5px;line-height:1.75;color:var(--mud)}
-.pos-i{display:flex;gap:18px;padding:22px 0;border-top:1px solid var(--ld)}
+.card{border:1px solid var(--line);border-radius:8px;padding:44px;background:var(--bg2)}
+.card h3{text-transform:uppercase;font-size:clamp(26px,2.6vw,36px);line-height:1.05;letter-spacing:-.01em;font-weight:300}
+.card .k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--ac-ink);margin-top:18px}
+.card p.t{margin-top:16px;font-size:15.5px;line-height:1.75;color:var(--mu)}
+.pos-i{display:flex;gap:18px;padding:22px 0;border-top:1px solid var(--line2)}
 .pos-i:first-of-type{margin-top:28px}
-.pos-i svg{flex:none;color:var(--v-l);margin-top:2px}
+.pos-i svg{flex:none;color:var(--ac);margin-top:2px}
 .pos-i b{display:block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600}
-.pos-i span{display:block;margin-top:8px;font-size:15px;line-height:1.65;color:var(--mud)}
-.pr-g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-.pr{position:relative;display:flex;flex-direction:column;border:1px solid var(--ll);border-radius:6px;padding:30px 26px;background:var(--paper2)}
-.pr-k{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
-.pr-s{margin-top:6px;font-size:12.5px;color:var(--mu)}
-.pr-v{margin-top:30px;font-family:Montserrat,system-ui,sans-serif;font-size:40px;line-height:1;letter-spacing:-.02em;font-weight:300}
-.pr-v .ph-hold{font-size:20px;letter-spacing:.02em}
-.pr-v small{font-family:Montserrat,sans-serif;font-size:14px;letter-spacing:0;margin-right:4px;vertical-align:top;position:relative;top:6px}
-.pr-x{margin-top:12px;font-size:13.5px;line-height:1.55;color:var(--mu);flex:1}
-.pr .btn{margin-top:26px;width:100%}
-.pr-hi{background:var(--ink);color:#F2F0EC;border-color:var(--ink)}
-.pr-hi .pr-s,.pr-hi .pr-x{color:var(--mud)}
-.pr-tag{position:absolute;top:-12px;left:26px;background:var(--v);color:#fff;padding:5px 10px;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;border-radius:3px}
-.btn-dk{background:var(--ink);color:#F2F0EC}
-.badges{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 36px;margin-top:40px;padding:22px;border:1px solid var(--ll);border-radius:6px}
+.pos-i span{display:block;margin-top:8px;font-size:15px;line-height:1.65;color:var(--mu)}
+.hh-ph{margin-top:28px;aspect-ratio:16/8;border-radius:6px;overflow:hidden}
+.hh-ph img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* valores pelo WhatsApp */
+.val{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:56px;align-items:center;padding:64px;border-radius:8px;background:var(--ac-soft);border:1px solid var(--ac-line)}
+.val .lead{margin-top:22px}
+.val-cta{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.val-cta p{font-size:13px;color:var(--mu);line-height:1.6}
+.badges{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 36px;margin-top:20px;padding:22px;border:1px solid var(--line);border-radius:8px;background:#fff}
 .badges span{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
-.badges svg{color:var(--v-ink)}
-.ph-hold{color:var(--v-ink);font-weight:600}
-.dark-hold{color:#E2B8F9}
-.faq{border-top:1px solid var(--ld)}
-.faq details{border-bottom:1px solid var(--ld)}
-.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:28px 0;font-family:Montserrat,system-ui,sans-serif;font-size:clamp(18px,1.7vw,22px);min-height:44px;font-weight:400;letter-spacing:-.01em}
+.badges svg{color:var(--ac)}
+
+/* faq */
+.faq{border-top:1px solid var(--line2)}
+.faq details{border-bottom:1px solid var(--line2)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:28px 0;font-size:clamp(18px,1.7vw,22px);min-height:44px;letter-spacing:-.01em}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary svg{flex:none;transition:transform .3s;color:var(--v-l)}
+.faq summary svg{flex:none;transition:transform .3s;color:var(--ac)}
 .faq details[open] summary svg{transform:rotate(45deg)}
-.faq details p{padding:0 0 28px;max-width:70ch;color:var(--mud);line-height:1.75;font-size:15.5px}
+.faq details p{padding:0 0 28px;max-width:70ch;color:var(--mu);line-height:1.75;font-size:15.5px}
+
+/* inscrição */
 .in-g{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:72px;align-items:start}
-.form{border:1px solid var(--ll);border-radius:6px;padding:40px;background:var(--paper2)}
+.form{border:1px solid var(--line);border-radius:8px;padding:40px;background:var(--bg2)}
 .fld{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
 .fld label{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:600}
-.fld input{height:52px;border:1px solid rgba(20,20,20,.25);border-radius:4px;background:#fff;padding:0 16px;font:400 16px Montserrat,sans-serif;color:var(--tx);outline:none;transition:border-color .2s,box-shadow .2s}
-.fld input:focus{border-color:var(--v);box-shadow:0 0 0 3px rgba(148,24,214,.15)}
+.fld input{height:52px;border:1px solid var(--line2);border-radius:6px;background:#fff;padding:0 16px;font:400 16px Montserrat,sans-serif;color:var(--tx);outline:none;transition:border-color .2s,box-shadow .2s}
+.fld input:focus{border-color:var(--ac);box-shadow:0 0 0 3px rgba(123,75,175,.15)}
 .row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.opt{appearance:none;text-align:left;border:1px solid rgba(20,20,20,.22);background:#fff;border-radius:4px;padding:14px 16px;min-height:64px;cursor:pointer;font-family:Montserrat,sans-serif;color:var(--tx);transition:border-color .2s,background .2s}
-.opt b{display:block;font-size:13.5px;font-weight:600}
-.opt span{display:block;margin-top:4px;font-size:12.5px;color:var(--mu)}
-.opt:hover{border-color:var(--tx)}
-.opt.on{border-color:var(--v);background:#F6EEFB;box-shadow:inset 0 0 0 1px var(--v)}
 .form .btn{width:100%;margin-top:10px;min-height:56px}
 .form-n{margin-top:14px;font-size:12.5px;line-height:1.6;color:var(--mu);text-align:center}
-.loc{margin-top:40px;border-top:1px solid var(--ll)}
-.loc li{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--ll)}
+.loc{margin-top:40px;border-top:1px solid var(--line)}
 .loc ul{list-style:none;margin:0;padding:0}
-.loc svg{flex:none;color:var(--v-ink);margin-top:2px}
+.loc li{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.loc svg{flex:none;color:var(--ac-ink);margin-top:2px}
 .loc b{display:block;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--mu)}
 .loc span{display:block;margin-top:6px;font-size:16px;line-height:1.5}
-.loc a{text-decoration:none;border-bottom:1px solid var(--ll)}
-.fab{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;align-items:center;gap:10px;background:var(--v);color:#fff;text-decoration:none;min-height:52px;padding:0 20px;border-radius:6px;font-weight:600;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 12px 32px rgba(60,0,90,.35);transition:background .2s,transform .2s}
-.fab:hover{background:var(--v-h);transform:translateY(-2px)}
-@media (max-width:1100px){
-  .pr-g{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:28px}
-}
+.loc a{text-decoration:none;border-bottom:1px solid var(--line2)}
+
 @media (max-width:1024px){
-  .intro-g,.cr-g,.in-g{grid-template-columns:minmax(0,1fr);gap:48px}
-  .ap-g{grid-template-columns:minmax(0,1fr)}
-  .two{grid-template-columns:minmax(0,1fr)}
+  .intro-g,.cr-g,.in-g,.val{grid-template-columns:minmax(0,1fr);gap:40px}
+  .ap-g,.two{grid-template-columns:minmax(0,1fr)}
   .gal{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:200px}
   .g-a{grid-column:span 2;grid-row:span 1}
   .g-b{grid-row:span 1}
@@ -180,12 +160,10 @@
 @media (max-width:640px){
   .hero{min-height:0;padding:72px 0 56px}
   .day,.card,.form{padding:26px 22px}
+  .val{padding:32px 22px}
   .topics{grid-template-columns:minmax(0,1fr)}
-  .pr-g,.row2,.opts{grid-template-columns:minmax(0,1fr)}
-  .day-h h3{font-size:34px}
-  .btn{white-space:normal;text-align:center;line-height:1.4;padding-top:10px;padding-bottom:10px}
-  .fab span{display:none}
-  .fab{padding:0 16px}
+  .row2{grid-template-columns:minmax(0,1fr)}
+  .day-h h3{font-size:30px}
 }
 </style></head>
 <body>
@@ -195,40 +173,51 @@
 
 <div>
 
-<div class="pg" style="--v: #9418D6">
+<div class="pg">
 
 <header class="hdr">
 <div class="wrap hdr-in">
-<a class="brand" href="/" aria-label="Dr. José Carlos Schenini: página inicial"><img src="/img/sig-light.png" alt="Dr. José Carlos Schenini, Reabilitação Oral"></a>
+<a class="brand" href="/" aria-label="Dr. José Carlos Schenini: página inicial"><img src="/img/sig-dark.png" alt="Dr. José Carlos Schenini, Reabilitação Oral"></a>
 <nav class="nav" aria-label="Principal">
 <a href="/">Início</a>
 <a class="on" href="/cursos">Cursos</a>
 <a href="/laboratorio">Laboratório</a>
-<a href="#inscricao">Inscrição</a>
+<a href="#valores">Valores</a>
 </nav>
-<a class="btn btn-v" href="#inscricao">Garantir vaga</a>
+<a class="btn btn-ac" href="#inscricao">Garantir vaga</a>
 </div>
 </header>
 
 <section class="hero">
 <img class="bg" src="/img/capa.jpg" alt="">
 <div class="wrap hero-in">
-<img class="hero-logo rise d1" src="/img/esthetic-light.png" alt="Esthetic Pro, Imersão em Estética Dental">
+<img class="hero-logo rise d1" src="/img/esthetic-dark.png" alt="Esthetic Pro, Imersão em Estética Dental">
 <p class="rise d2"><span class="hero-year">Turma 2027</span></p>
 <h1 class="rise d3">Quer ter mais <strong>confiança</strong> nos teus casos de <strong>odontologia estética</strong>?</h1>
 <div class="chips rise d4">
-<span class="chip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>Sexta e sábado · <span class="dark-hold">[data da turma]</span></span>
+<span class="chip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>Sexta e sábado · <span class="ph-hold">[data da turma]</span></span>
 <span class="chip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V5l8 4 8-4v14l-8 4-8-4z"></path></svg>Teoria + hands-on + cimentação ao vivo</span>
 <span class="chip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>Santa Maria / RS</span>
 </div>
 <div class="hero-cta rise d5">
-<a class="btn btn-v" href="#inscricao">Garantir minha vaga <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="btn btn-ac" href="#inscricao">Garantir minha vaga <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 <a class="btn btn-line" href="#cronograma">Ver cronograma</a>
 </div>
 </div>
 </section>
 
-<section class="sec light">
+<section class="stats-sec">
+<div class="wrap">
+<div class="stats rv">
+<div class="stat"><b><span class="num" data-count="17">17</span></b><span>Temas na aula teórica de sexta</span></div>
+<div class="stat"><b><span class="num" data-count="2">2</span><small>dias</small></b><span>De imersão: teoria, hands-on e clínica ao vivo</span></div>
+<div class="stat"><b><span class="num" data-count="7">7</span><small>dias</small></b><span>De garantia</span></div>
+<div class="stat"><b><span class="ph-hold">[nº]</span></b><span>Dentistas que já passaram pela imersão</span></div>
+</div>
+</div>
+</section>
+
+<section class="sec alt">
 <div class="wrap intro-g">
 <div class="rv">
 <p class="eyebrow">Introdução</p>
@@ -282,7 +271,7 @@
 </div>
 </section>
 
-<section class="sec light" id="cronograma">
+<section class="sec alt" id="cronograma">
 <div class="wrap">
 <div class="sec-head rv">
 <div>
@@ -294,7 +283,7 @@
 <div class="cr-g">
 <div class="day rv">
 <div class="day-h"><h3>Sexta-feira</h3><span>Tarde e noite</span></div>
-<div class="slot">
+<div class="slot-c">
 <p class="slot-k">Aula teórica</p>
 <ol class="topics">
 
@@ -361,6 +350,7 @@
 <h2 class="dd">Como é <em>estar lá</em>.</h2>
 </div>
 </div>
+<div class="gal-vid rv"><figure class="vid vid-wide"><span class="vid-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span><p>[Vídeo da imersão]</p><span>Resumo em vídeo de uma edição anterior: aula, hands-on, cimentação ao vivo e happy hour</span></figure></div>
 <div class="gal rv">
 <figure class="g-a"><img src="/img/turma.jpg" alt="Turma reunida na sala de aula da imersão"></figure>
 <figure class="g-b"><img src="/img/palestra.jpg" alt="Dr. José Carlos durante a aula teórica"></figure>
@@ -388,44 +378,53 @@
 </div>
 </section>
 
-<section class="sec light" id="investimento">
+<section class="sec alt" id="depoimentos">
 <div class="wrap">
 <div class="sec-head rv">
 <div>
-<p class="eyebrow">Investimento</p>
-<h2 class="dd">Escolhe como <em>investir</em>.</h2>
+<p class="eyebrow">Quem já fez</p>
+<h2 class="dd">O que dizem <em>os alunos</em>.</h2>
 </div>
-<p class="lead" style="max-width: 40ch">Turma 2027 · <span class="ph-hold">[nº de vagas]</span> vagas para garantir atenção individual no hands-on.</p>
+<p class="lead" style="max-width: 44ch">Dentistas que passaram pelas últimas edições da imersão contam como foi a experiência.</p>
 </div>
-<div class="pr-g">
-<div class="pr rv">
-<p class="pr-k">Reserva de vaga</p>
-<p class="pr-s">Para garantir o teu lugar</p>
-<p class="pr-v"><span class="ph-hold">[valor]</span></p>
-<p class="pr-x">Esse valor reserva a tua vaga e é abatido do valor total do curso.</p>
-<a class="btn btn-dk" href="#inscricao">Reservar</a>
+<div class="dep-g">
+<article class="dep rv">
+<figure class="vid vid-45"><span class="vid-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span><p>[Depoimento em vídeo 1]</p><span>Aluno de uma turma anterior</span></figure>
+<div class="dep-b">
+<p class="dep-q"><span class="ph-hold">[Depoimento do aluno 1]</span></p>
+<div class="dep-who"><span class="dep-av" aria-hidden="true"></span><div><b><span class="ph-hold">[Nome do aluno]</span></b><span><span class="ph-hold">[Cidade/UF · Turma 20XX]</span></span></div></div>
 </div>
-<div class="pr pr-hi rv">
-<span class="pr-tag">Melhor condição</span>
-<p class="pr-k">À vista</p>
-<p class="pr-s">Curso completo</p>
-<p class="pr-v"><span class="ph-hold dark-hold">[valor]</span></p>
-<p class="pr-x">Pagamento único do curso completo.</p>
-<a class="btn btn-v" href="#inscricao">Quero à vista</a>
+</article>
+<article class="dep rv">
+<figure class="vid vid-45"><span class="vid-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span><p>[Depoimento em vídeo 2]</p><span>Aluno de uma turma anterior</span></figure>
+<div class="dep-b">
+<p class="dep-q"><span class="ph-hold">[Depoimento do aluno 2]</span></p>
+<div class="dep-who"><span class="dep-av" aria-hidden="true"></span><div><b><span class="ph-hold">[Nome do aluno]</span></b><span><span class="ph-hold">[Cidade/UF · Turma 20XX]</span></span></div></div>
 </div>
-<div class="pr rv">
-<p class="pr-k">Cartão de crédito</p>
-<p class="pr-s">Em até 12x</p>
-<p class="pr-v"><span class="ph-hold">[valor]</span></p>
-<p class="pr-x">Pagamento parcelado em até 12x no cartão.</p>
-<a class="btn btn-dk" href="#inscricao">Parcelar</a>
+</article>
+<article class="dep rv">
+<figure class="vid vid-45"><span class="vid-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span><p>[Depoimento em vídeo 3]</p><span>Aluno de uma turma anterior</span></figure>
+<div class="dep-b">
+<p class="dep-q"><span class="ph-hold">[Depoimento do aluno 3]</span></p>
+<div class="dep-who"><span class="dep-av" aria-hidden="true"></span><div><b><span class="ph-hold">[Nome do aluno]</span></b><span><span class="ph-hold">[Cidade/UF · Turma 20XX]</span></span></div></div>
 </div>
-<div class="pr rv">
-<p class="pr-k">Entrada + boleto</p>
-<p class="pr-s">Entrada + 12 parcelas</p>
-<p class="pr-v"><span class="ph-hold">[valor]</span></p>
-<p class="pr-x">Uma entrada mais 12 parcelas no boleto.</p>
-<a class="btn btn-dk" href="#inscricao">Escolher boleto</a>
+</article>
+</div>
+</div>
+</section>
+
+<section class="sec" id="valores">
+<div class="wrap">
+<div class="val rv">
+<div>
+<p class="eyebrow">Valores e condições</p>
+<h2 class="dd" style="margin-top: 20px">Quer saber <em>os valores</em>?</h2>
+<p class="lead">Valores, formas de pagamento e datas da Turma 2027 são combinados direto com o Dr. José Carlos pelo WhatsApp. Chama e tira todas as tuas dúvidas.</p>
+</div>
+<div class="val-cta">
+<a class="btn btn-ac" href="https://wa.me/5555997167672?text=Ol%C3%A1%2C%20Dr.%20Jos%C3%A9%20Carlos!%20Vim%20pelo%20site%20e%20quero%20saber%20os%20valores%20e%20as%20condi%C3%A7%C3%B5es%20da%20Imers%C3%A3o%20Esthetic%20Pro%202027." target="_blank" rel="noopener">Saber valores pelo WhatsApp <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="btn btn-line" href="#inscricao">Já quero garantir minha vaga</a>
+<p>Resposta direto com o Dr. José Carlos, sem compromisso.</p>
 </div>
 </div>
 <div class="badges rv">
@@ -436,7 +435,7 @@
 </div>
 </section>
 
-<section class="sec">
+<section class="sec alt">
 <div class="wrap">
 <div class="sec-head rv">
 <div>
@@ -452,8 +451,8 @@
 </details>
 
 <details>
-<summary>O valor da reserva é descontado do curso?<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></summary>
-<p>Sim. O valor da reserva garante a tua vaga e é abatido do valor completo do curso.</p>
+<summary>Quais são os valores e as formas de pagamento?<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></summary>
+<p>Os valores e as condições são combinados direto com o Dr. José Carlos pelo WhatsApp. É só chamar que ele te passa todos os detalhes da Turma 2027.</p>
 </details>
 
 <details>
@@ -480,12 +479,12 @@
 </div>
 </section>
 
-<section class="sec light" id="inscricao">
+<section class="sec" id="inscricao">
 <div class="wrap in-g">
 <div class="rv">
 <p class="eyebrow">Inscrição</p>
 <h2 class="dd" style="margin-top: 20px">Garante a <em>tua vaga</em>.</h2>
-<p class="lead" style="margin-top: 24px">Preenche os dados e a mensagem já vai pronta para o WhatsApp do Dr. José Carlos, que confirma a tua inscrição e envia as formas de pagamento.</p>
+<p class="lead" style="margin-top: 24px">Preenche os dados e a mensagem já vai pronta para o WhatsApp do Dr. José Carlos, que te passa os valores, as condições e confirma a tua vaga.</p>
 <div class="loc">
 <ul>
 <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg><div><b>Local</b><span>U.NOS Coworking em Saúde</span><span><a href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Pinheiro+Machado+2350+Santa+Maria+RS" target="_blank" rel="noopener">Rua Pinheiro Machado, 2350 · Sala 610</a></span><span>Santa Maria / RS</span></div></li>
@@ -499,20 +498,7 @@
 <div class="fld"><label for="f-cidade">Cidade</label><input id="f-cidade" type="text" autocomplete="address-level2" value=""></div>
 <div class="fld"><label for="f-cro">CRO (opcional)</label><input id="f-cro" type="text" value=""></div>
 </div>
-<div class="fld"><label id="pag-l">Forma de pagamento</label>
-<div class="opts" role="group" aria-labelledby="pag-l">
-
-<button type="button" class="opt " aria-pressed="false"><b>Reserva de vaga</b><span>Abatida do valor total</span></button>
-
-<button type="button" class="opt on" aria-pressed="true"><b>À vista</b><span>Pagamento único</span></button>
-
-<button type="button" class="opt " aria-pressed="false"><b>Cartão em até 12x</b><span>Parcelado no cartão</span></button>
-
-<button type="button" class="opt " aria-pressed="false"><b>Entrada + boleto</b><span>Entrada + 12x no boleto</span></button>
-
-</div>
-</div>
-<a class="btn btn-v" href="https://wa.me/5555997167672?text=Ol%C3%A1%2C%20Dr.%20Jos%C3%A9%20Carlos!%20Quero%20me%20inscrever%20na%20Imers%C3%A3o%20Esthetic%20Pro%202027.%0A%0ANome%3A%20(n%C3%A3o%20informado)%0ACidade%3A%20(n%C3%A3o%20informado)%0ACRO%3A%20(n%C3%A3o%20informado)%0AForma%20de%20pagamento%3A%20%C3%80%20vista" target="_blank" rel="noopener">Enviar inscrição pelo WhatsApp <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="btn btn-ac" href="https://wa.me/5555997167672?text=Ol%C3%A1%2C%20Dr.%20Jos%C3%A9%20Carlos!%20Vim%20pelo%20site%20e%20quero%20saber%20os%20valores%20e%20as%20condi%C3%A7%C3%B5es%20da%20Imers%C3%A3o%20Esthetic%20Pro%202027.%0A%0ANome%3A%20(n%C3%A3o%20informado)%0ACidade%3A%20(n%C3%A3o%20informado)%0ACRO%3A%20(n%C3%A3o%20informado)" target="_blank" rel="noopener">Falar com o Dr. pelo WhatsApp <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 <p class="form-n">Garantia de 7 dias · Certificado · Suporte via WhatsApp</p>
 </form>
 </div>
@@ -521,14 +507,14 @@
 <footer class="ft">
 <div class="wrap">
 <div class="ft-top">
-<img src="/img/esthetic-light.png" alt="Esthetic Pro, Imersão em Estética Dental" style="height: 56px; width: auto; display: block">
+<img src="/img/esthetic-dark.png" alt="Esthetic Pro, Imersão em Estética Dental" style="height: 56px; width: auto; display: block">
 <div class="ft-logos">
-<a href="/" aria-label="Dr. José Carlos Schenini"><img src="/img/sig-light.png" alt="Dr. José Carlos Schenini" style="height: 44px"></a>
-<a href="/laboratorio" aria-label="CS LAB"><img src="/img/cslab-light.png" alt="CS LAB" style="height: 56px"></a>
+<a href="/" aria-label="Dr. José Carlos Schenini"><img src="/img/sig-dark.png" alt="Dr. José Carlos Schenini" style="height: 44px"></a>
+<a href="/laboratorio" aria-label="CS LAB"><img src="/img/cslab-dark.png" alt="CS LAB" style="height: 56px"></a>
 </div>
 </div>
 <div class="ft-bot">
-<p>Esthetic Pro · Imersão em Estética Dental · Dr. José Carlos Schenini · <span class="dark-hold">CRO-RS [número]</span> · © 2026</p>
+<p>Esthetic Pro · Imersão em Estética Dental · Dr. José Carlos Schenini · <span class="ph-hold">CRO-RS [número]</span> · © 2026</p>
 <p>Site desenvolvido por <a href="https://arthur-portfolio-lps.vercel.app" target="_blank" rel="noopener">3eTec</a></p>
 </div>
 </div>

@@ -2,6 +2,49 @@
 (function () {
   var PHONE = '5555997167672';
   var wa = function (msg) { return 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent(msg); };
+  var hasIO = 'IntersectionObserver' in window;
+  var onVisible = function (els, fn, opts) {
+    if (!hasIO) { els.forEach(fn); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { fn(e.target); io.unobserve(e.target); } });
+    }, opts || { threshold: 0.35 });
+    els.forEach(function (el) { io.observe(el); });
+  };
+
+  /* ---------- Revelação ao rolar (fallback para navegadores sem animation-timeline) ---------- */
+  var supportsTimeline = window.CSS && CSS.supports && CSS.supports('animation-timeline: view()');
+  if (!supportsTimeline && hasIO) {
+    document.documentElement.classList.add('io');
+    onVisible(Array.prototype.slice.call(document.querySelectorAll('.rv')), function (el) { el.classList.add('in'); },
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  }
+
+  /* ---------- Números que sobem ----------
+     <span class="num" data-count="17">17</span>      conta de 0 até 17
+     <span class="num" data-since="2018">8</span>     anos desde 2018 (atualiza sozinho)
+     data-pad="2" completa com zero (01, 02...). Sem JS, o número final já está no HTML. */
+  var nums = Array.prototype.slice.call(document.querySelectorAll('.num[data-count], .num[data-since]'));
+  var fmt = function (el, v) {
+    var s = Math.round(v).toLocaleString('pt-BR');
+    var pad = Number(el.getAttribute('data-pad') || 0);
+    while (s.length < pad) s = '0' + s;
+    el.textContent = s;
+  };
+  nums.forEach(function (el) {
+    var since = el.getAttribute('data-since');
+    el._target = since ? Math.max(0, new Date().getFullYear() - Number(since)) : Number(el.getAttribute('data-count'));
+    fmt(el, hasIO ? 0 : el._target);
+  });
+  onVisible(nums, function (el) {
+    var t0 = null, dur = el._target > 20 ? 1800 : 1100;
+    var step = function (t) {
+      if (t0 === null) t0 = t;
+      var p = Math.min(1, (t - t0) / dur);
+      fmt(el, el._target * (1 - Math.pow(1 - p, 3)));
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, { threshold: 0.6 });
 
   /* ---------- Início: casos antes/depois ---------- */
   var CASES = [
@@ -38,34 +81,21 @@
     });
   }
 
-  /* ---------- Cursos: inscrição pelo WhatsApp ---------- */
+  /* ---------- Cursos: contato pelo WhatsApp (valores e condições são combinados na conversa) ---------- */
   var form = document.querySelector('form.form');
   if (form) {
-    var OPTS = [
-      { t: 'Reserva de vaga' },
-      { t: 'À vista' },
-      { t: 'Cartão em até 12x' },
-      { t: 'Entrada + boleto' }
-    ];
-    var pag = 1;
-    var optBtns = form.querySelectorAll('.opt');
     var send = form.querySelector('a.btn');
     var val = function (id) { var el = document.getElementById(id); return (el && el.value.trim()) || '(não informado)'; };
     var update = function () {
-      optBtns.forEach(function (b, j) { b.classList.toggle('on', j === pag); b.setAttribute('aria-pressed', j === pag ? 'true' : 'false'); });
       send.href = wa([
-        'Olá, Dr. José Carlos! Quero me inscrever na Imersão Esthetic Pro 2027.', '',
+        'Olá, Dr. José Carlos! Vim pelo site e quero saber os valores e as condições da Imersão Esthetic Pro 2027.', '',
         'Nome: ' + val('f-nome'),
         'Cidade: ' + val('f-cidade'),
-        'CRO: ' + val('f-cro'),
-        'Forma de pagamento: ' + OPTS[pag].t
+        'CRO: ' + val('f-cro')
       ].join('\n'));
     };
-    optBtns.forEach(function (b, j) { b.addEventListener('click', function () { pag = j; update(); }); });
     form.querySelectorAll('input').forEach(function (i) { i.addEventListener('input', update); });
     form.addEventListener('submit', function (e) { e.preventDefault(); });
-    // Botões dos cards de preço pré-selecionam a forma de pagamento
-    document.querySelectorAll('.pr .btn').forEach(function (b, j) { b.addEventListener('click', function () { pag = j; update(); }); });
     update();
   }
 })();

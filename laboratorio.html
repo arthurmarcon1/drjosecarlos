@@ -11,112 +11,94 @@
 <meta property="og:site_name" content="Dr. José Carlos Schenini">
 <meta property="og:title" content="CS LAB | Laboratório Odontológico">
 <meta property="og:description" content="CS LAB, o laboratório odontológico dentro da clínica do Dr. José Carlos Schenini em Santa Maria/RS: peças sob medida, mais agilidade e personalização em cada tratamento.">
-<meta property="og:image" content="https://dr-jose-carlos-schenini.vercel.app/img/cslab-light.png">
+<meta property="og:image" content="https://dr-jose-carlos-schenini.vercel.app/img/cslab-dark.png">
 <meta property="og:image:width" content="700">
 <meta property="og:image:height" content="618">
 <meta property="og:image:alt" content="CS LAB, Laboratório Odontológico">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="CS LAB | Laboratório Odontológico">
 <meta name="twitter:description" content="CS LAB, o laboratório odontológico dentro da clínica do Dr. José Carlos Schenini em Santa Maria/RS: peças sob medida, mais agilidade e personalização em cada tratamento.">
-<meta name="twitter:image" content="https://dr-jose-carlos-schenini.vercel.app/img/cslab-light.png">
+<meta name="twitter:image" content="https://dr-jose-carlos-schenini.vercel.app/img/cslab-dark.png">
 <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/img/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"><link rel="stylesheet" href="/css/base.css">
 <style>
-.pg{--o:#F07A1F;--o-h:#D9690F;--o-ink:#A34708;--v:#9418D6;--v-l:#BE5CF2;--ink:#0A0A0B;--g1:#111113;--g2:#18181B;--paper:#EFEDE8;--paper2:#F7F6F3;--tx:#151515;--mu:#5B5854;--mud:#ABA8A3;--ld:rgba(255,255,255,.12);--ll:rgba(20,20,20,.13);font-family:Montserrat,system-ui,sans-serif;color:#F2F0EC;background:var(--g1);-webkit-font-smoothing:antialiased;overflow-x:hidden;font-size:16px}
-.light{background:var(--paper);color:var(--tx)}
-.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;color:var(--mud)}
-.eyebrow::before{content:"";width:28px;height:1px;background:var(--o)}
-.light .eyebrow{color:var(--mu)}
-.h2{font-family:Montserrat,system-ui,sans-serif;font-size:clamp(32px,4vw,56px);line-height:1.08;letter-spacing:-.03em;font-weight:300} /* [revisar: alternativa peso 200 para ainda mais leve] */
-.h2 em{font-style:normal;color:var(--o);font-weight:600}
-.light .h2 em{color:var(--o-ink)}
-.lead{font-size:17px;line-height:1.75;color:var(--mud);max-width:56ch}
-.light .lead{color:var(--mu)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 24px;border-radius:4px;font-family:Montserrat,sans-serif;font-weight:600;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:1px solid transparent;transition:background .25s,color .25s,border-color .25s;cursor:pointer;white-space:nowrap}
-.btn-o{background:var(--o);color:#0A0A0B}
-.btn-o:hover{background:var(--o-h)}
-.btn-line{border-color:rgba(242,240,236,.4);color:#F2F0EC}
-.sec-head .h2{margin-top:20px}
-.ph-hold{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--o-ink);border:1px dashed var(--o-ink);padding:4px 8px;border-radius:3px}
-.dark-hold{color:var(--o);border-color:var(--o)}
-.nav a.on{color:#fff;border-color:var(--o)}
-.hero{padding:88px 0 112px;overflow:hidden}
+/* hero */
+.hero{padding:88px 0 112px;overflow:hidden;background:var(--bg2)}
 .hero-g{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:72px;align-items:center}
-.hero-logo{width:min(250px,60%);height:auto;display:block}
-.hero h1{font-family:Montserrat,system-ui,sans-serif;font-size:clamp(40px,5vw,76px);line-height:1.04;letter-spacing:-.035em;margin-top:48px;font-weight:300}
-.hero h1 em{font-style:normal;color:var(--o);font-weight:600}
+.hero-logo{width:min(230px,56%);height:auto;display:block}
+.hero h1{font-size:clamp(40px,5vw,76px);line-height:1.04;letter-spacing:-.035em;margin-top:44px;font-weight:300}
+.hero h1 em{font-style:normal;color:var(--ac-ink);font-weight:600}
 .hero .lead{margin-top:28px}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:40px}
 .hero-ph{position:relative;aspect-ratio:4/4.6}
-.hero-ph .frame{position:absolute;inset:0;border-radius:6px;overflow:hidden}
-.hero-ph img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.05);animation:zoomOut 2.4s cubic-bezier(.2,.7,.2,1) both}
-.hero-ph .c{position:absolute;width:64px;height:64px;border-color:var(--o);border-style:solid;border-width:0;z-index:2}
+.hero-ph .frame{position:absolute;inset:0;border-radius:8px;overflow:hidden}
+.hero-ph img{width:100%;height:100%;object-fit:cover;display:block;animation:zoomOut 2.4s cubic-bezier(.2,.7,.2,1) both}
+.hero-ph .c{position:absolute;width:64px;height:64px;border-color:var(--ac);border-style:solid;border-width:0;z-index:2}
 .hero-ph .c1{top:-14px;left:-14px;border-top-width:2px;border-left-width:2px}
 .hero-ph .c2{bottom:-14px;right:-14px;border-bottom-width:2px;border-right-width:2px}
-.hero-tag{position:absolute;left:22px;bottom:22px;z-index:2;background:#0A0A0B;padding:14px 16px;border-radius:4px;display:flex;gap:12px;align-items:center;font-size:12px;letter-spacing:.16em;text-transform:uppercase}
-.hero-tag i{width:8px;height:8px;background:var(--o);display:block;border-radius:1px}
-.d2{animation-delay:.25s}
-.d3{animation-delay:.4s}
-.d4{animation-delay:.55s}
+.hero-tag{position:absolute;left:22px;bottom:22px;z-index:2;background:#fff;color:var(--tx);padding:14px 16px;border-radius:6px;display:flex;gap:12px;align-items:center;font-size:12px;letter-spacing:.16em;text-transform:uppercase;box-shadow:0 4px 18px rgba(30,35,40,.1)}
+.hero-tag i{width:8px;height:8px;background:var(--ac);display:block;border-radius:2px}
 @keyframes zoomOut{from{transform:scale(1.12)}to{transform:scale(1)}}
-.vt-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--ll);border-left:1px solid var(--ll)}
-.vt{padding:40px 36px 44px;border-right:1px solid var(--ll);border-bottom:1px solid var(--ll);transition:background .3s}
-.vt:hover{background:var(--paper2)}
-.vt-i{width:52px;height:52px;border:1px solid var(--ll);border-radius:4px;display:flex;align-items:center;justify-content:center;color:var(--o-ink);transition:background .3s,color .3s,border-color .3s}
-.vt:hover .vt-i{background:var(--o);border-color:var(--o);color:#0A0A0B}
-.vt h3{font-family:Montserrat,system-ui,sans-serif;font-size:22px;line-height:1.2;margin-top:28px;font-weight:400;letter-spacing:-.01em}
+.stats-sec{padding:72px 0 0}
+
+/* vantagens */
+.vt-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.vt{padding:40px 36px 44px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:background .3s}
+.vt:hover{background:var(--bg2)}
+.vt-i{width:52px;height:52px;border:1px solid var(--line2);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--ac-ink);transition:background .3s,color .3s,border-color .3s}
+.vt:hover .vt-i{background:var(--ac);border-color:var(--ac);color:#fff}
+.vt h3{font-size:22px;line-height:1.2;margin-top:28px;letter-spacing:-.01em}
 .vt p{margin-top:14px;font-size:15px;line-height:1.7;color:var(--mu)}
-.vt-hl{background:var(--ink);color:#F2F0EC}
-.vt-hl:hover{background:#1c1c1f}
-.vt-hl p{color:var(--mud)}
-.vt-hl .vt-i{border-color:var(--o);color:var(--o)}
-.cmp{border:1px solid var(--ld);border-radius:6px;overflow:hidden}
+.vt-hl{background:var(--ac-soft)}
+.vt-hl:hover{background:var(--ac-soft)}
+.vt-hl .vt-i{border-color:var(--ac);color:var(--ac-ink)}
+
+/* comparativo */
+.cmp{border:1px solid var(--line2);border-radius:8px;overflow:hidden;background:#fff}
 .cmp-r{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr) minmax(0,1fr)}
-.cmp-r + .cmp-r{border-top:1px solid var(--ld)}
+.cmp-r + .cmp-r{border-top:1px solid var(--line)}
 .cmp-r > div{padding:26px 28px;font-size:15.5px;line-height:1.5}
-.cmp-r > div + div{border-left:1px solid var(--ld)}
-.cmp-h > div{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--mud);padding-top:22px;padding-bottom:22px}
-.cmp-h .us{color:#0A0A0B;background:var(--o)}
-.cmp .k{font-family:Montserrat,system-ui,sans-serif;font-size:17px;font-weight:400;letter-spacing:-.01em}
-.cmp .them{color:var(--mud)}
-.cmp .us{background:rgba(240,122,31,.07)}
+.cmp-r > div + div{border-left:1px solid var(--line)}
+.cmp-h > div{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--mu);padding-top:22px;padding-bottom:22px}
+.cmp .k{font-size:17px;letter-spacing:-.01em}
+.cmp .them{color:var(--mu)}
+.cmp .us{background:var(--ac-soft)}
 .cmp .us b{font-weight:600}
-.cmp .cmp-h .us{background:var(--o);color:#0A0A0B}
-.brandtile{background:var(--paper2);display:flex;align-items:center;justify-content:center;isolation:isolate}
-.gl .brandtile img.mm{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:none;opacity:.9;z-index:-1}
-.gl .brandtile img.lg{position:relative;width:min(300px,50%);height:auto;filter:none}
-.cmp-n{margin-top:18px;font-size:12.5px;color:var(--mud)}
+.cmp .cmp-h .us{background:var(--ac);color:#fff}
+.cmp-n{margin-top:18px;font-size:12.5px;color:var(--mu)}
+
+/* processo */
 .pr-t{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;position:relative}
-.pr-t::before{content:"";position:absolute;left:0;right:0;top:27px;height:1px;background:var(--ll)}
+.pr-t::before{content:"";position:absolute;left:0;right:0;top:27px;height:1px;background:var(--line2)}
 .ps{position:relative;padding-right:28px}
-.ps-n{position:relative;z-index:1;width:56px;height:56px;border-radius:4px;background:var(--paper);border:1px solid var(--tx);display:flex;align-items:center;justify-content:center;font-family:Montserrat,system-ui,sans-serif;font-size:15px;transition:background .3s,color .3s,border-color .3s;font-weight:600}
-.ps:hover .ps-n{background:var(--o);border-color:var(--o)}
-.ps h3{font-family:Montserrat,system-ui,sans-serif;font-size:20px;line-height:1.2;margin-top:28px;font-weight:400;letter-spacing:-.01em}
+.ps-n{position:relative;z-index:1;width:56px;height:56px;border-radius:6px;background:#fff;border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:15px;color:var(--ac-ink);transition:background .3s,color .3s,border-color .3s}
+.ps:hover .ps-n{background:var(--ac);border-color:var(--ac);color:#fff}
+.ps h3{font-size:20px;line-height:1.2;margin-top:28px;letter-spacing:-.01em}
 .ps p{margin-top:12px;font-size:14.5px;line-height:1.65;color:var(--mu)}
+
+/* serviços */
 .sv-g{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:80px;align-items:start}
-.sv{list-style:none;margin:0;padding:0;border-top:1px solid var(--ld)}
-.sv li{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0;border-bottom:1px solid var(--ld);font-family:Montserrat,system-ui,sans-serif;font-size:clamp(19px,1.9vw,26px);font-weight:300;letter-spacing:-.015em}
-.sv li span{font-family:Montserrat,sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mud)}
+.sv{list-style:none;margin:0;padding:0;border-top:1px solid var(--line2)}
+.sv li{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0;border-bottom:1px solid var(--line2);font-size:clamp(19px,1.9vw,26px);font-weight:300;letter-spacing:-.015em}
+.sv li span{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mu);font-weight:500}
+
+/* galeria */
 .gl{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);grid-template-rows:260px 260px;gap:14px}
-.gl figure{margin:0;border-radius:6px;overflow:hidden;position:relative}
+.gl figure{margin:0;border-radius:8px;overflow:hidden;position:relative}
 .gl .big{grid-row:span 2}
-.gl img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1)}
-.slot{border:1px dashed var(--o-ink);background:var(--paper2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:24px;color:var(--o-ink)}
-.slot p{font-size:13px;font-weight:600;letter-spacing:.06em}
-.slot span{font-size:12.5px;color:var(--mu);max-width:30ch;line-height:1.5}
-.pa{position:relative;border-radius:6px;overflow:hidden;background:var(--o);color:#0A0A0B;padding:64px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:48px;align-items:end}
-.pa .h2 em{color:#0A0A0B}
-.pa p.lead{color:#2A1A0C;margin-top:20px}
-.pa .eyebrow{color:#2A1A0C}
-.pa .eyebrow::before{background:#0A0A0B}
+.brandtile{background:var(--bg2);display:flex;align-items:center;justify-content:center;isolation:isolate}
+.gl .brandtile img.mm{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.9;z-index:-1}
+.gl .brandtile img.lg{position:relative;width:min(300px,50%);height:auto}
+.gl-vid{margin-top:14px}
+
+/* parceiros */
+.pa{border-radius:8px;background:var(--ac-soft);border:1px solid var(--ac-line);padding:64px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:48px;align-items:end}
+.pa p.lead{margin-top:20px}
 .pa-cta{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
-.btn-dk{background:#0A0A0B;color:#F2F0EC}
-.pa .ph-hold{color:#0A0A0B;border-color:#0A0A0B}
-.fab{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;align-items:center;gap:10px;background:var(--o);color:#0A0A0B;text-decoration:none;min-height:52px;padding:0 20px;border-radius:6px;font-weight:600;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 12px 32px rgba(120,50,0,.35);transition:background .2s,transform .2s}
-.fab:hover{background:var(--o-h);transform:translateY(-2px)}
+
 @media (max-width:1024px){
   .hero-g,.sv-g{grid-template-columns:minmax(0,1fr);gap:56px}
   .hero-ph{max-width:560px}
@@ -130,21 +112,20 @@
 }
 @media (max-width:860px){
   .cmp-r{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
-  .cmp-r .k{grid-column:1 / 3;border-bottom:1px solid var(--ld);padding-bottom:14px}
+  .cmp-r .k{grid-column:1 / 3;border-bottom:1px solid var(--line);padding-bottom:14px}
   .cmp-r > div + div{border-left:0}
-  .cmp-r > div.us{border-left:1px solid var(--ld)}
+  .cmp-r > div.us{border-left:1px solid var(--line)}
   .cmp-h > div:first-child{display:none}
 }
 @media (max-width:640px){
   .hero{padding:56px 0 88px}
+  .stats-sec{padding-top:48px}
   .vt-g{grid-template-columns:minmax(0,1fr)}
   .vt{padding:32px 24px}
   .cmp-r > div{padding:18px 16px;font-size:14px}
   .gl{grid-template-columns:minmax(0,1fr);grid-template-rows:300px 220px 220px}
   .gl .big{grid-row:span 1}
   .pa{padding:32px 24px}
-  .fab span{display:none}
-  .fab{padding:0 16px}
 }
 </style></head>
 <body>
@@ -154,29 +135,29 @@
 
 <div>
 
-<div class="pg" style="--o: #F07A1F">
+<div class="pg pg-lab">
 
 <header class="hdr">
 <div class="wrap hdr-in">
-<a class="brand" href="/" aria-label="Dr. José Carlos Schenini: página inicial"><img src="/img/sig-light.png" alt="Dr. José Carlos Schenini, Reabilitação Oral"></a>
+<a class="brand" href="/" aria-label="Dr. José Carlos Schenini: página inicial"><img src="/img/sig-dark.png" alt="Dr. José Carlos Schenini, Reabilitação Oral"></a>
 <nav class="nav" aria-label="Principal">
 <a href="/">Início</a>
 <a href="/cursos">Cursos</a>
 <a class="on" href="/laboratorio">Laboratório</a>
 <a href="#parceiros">Para dentistas</a>
 </nav>
-<a class="btn btn-o" href="https://wa.me/5555997167672?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20o%20CS%20LAB." target="_blank" rel="noopener">Falar com o lab</a>
+<a class="btn btn-ac" href="https://wa.me/5555997167672?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20o%20CS%20LAB." target="_blank" rel="noopener">Falar com o lab</a>
 </div>
 </header>
 
 <section class="hero">
 <div class="wrap hero-g">
 <div>
-<img class="hero-logo rise d1" src="/img/cslab-light.png" alt="CS LAB, Laboratório Odontológico">
+<img class="hero-logo rise d1" src="/img/cslab-dark.png" alt="CS LAB, Laboratório Odontológico">
 <h1 class="rise d2">O laboratório <em>dentro</em> da clínica.</h1>
 <p class="lead rise d3">Quando quem planeja o sorriso e quem confecciona as peças trabalham lado a lado, o tratamento anda mais rápido e o resultado sai exatamente como foi pensado.</p>
 <div class="hero-cta rise d4">
-<a class="btn btn-o" href="https://wa.me/5555997167672?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20o%20CS%20LAB." target="_blank" rel="noopener">Falar com o laboratório <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="btn btn-ac" href="https://wa.me/5555997167672?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20o%20CS%20LAB." target="_blank" rel="noopener">Falar com o laboratório <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 <a class="btn btn-line" href="#vantagens">Ver as vantagens</a>
 </div>
 </div>
@@ -188,7 +169,18 @@
 </div>
 </section>
 
-<section class="sec light" id="vantagens">
+<section class="stats-sec">
+<div class="wrap">
+<div class="stats rv">
+<div class="stat"><b><span class="num" data-count="5">5</span></b><span>Etapas, do planejamento à cimentação, no mesmo endereço</span></div>
+<div class="stat"><b><span class="num">0</span></b><span>Envios de peças entre cidades</span></div>
+<div class="stat"><b><span class="ph-hold">[nº]</span></b><span>Peças confeccionadas no CS LAB</span></div>
+<div class="stat"><b><span class="ph-hold">[nº]</span></b><span>Anos de laboratório</span></div>
+</div>
+</div>
+</section>
+
+<section class="sec" id="vantagens">
 <div class="wrap">
 <div class="sec-head rv">
 <div>
@@ -281,7 +273,7 @@
 </div>
 </section>
 
-<section class="sec">
+<section class="sec alt">
 <div class="wrap">
 <div class="sec-head rv">
 <div>
@@ -307,7 +299,7 @@
 </div>
 </section>
 
-<section class="sec light">
+<section class="sec">
 <div class="wrap">
 <div class="sec-head rv">
 <div>
@@ -318,27 +310,27 @@
 </div>
 <div class="pr-t">
 
-<div class="ps rv"><span class="ps-n">01</span><h3>Planejamento</h3><p>Fotos, exame e definição do material e da técnica para o caso.</p></div>
+<div class="ps rv"><span class="ps-n num" data-count="1" data-pad="2">01</span><h3>Planejamento</h3><p>Fotos, exame e definição do material e da técnica para o caso.</p></div>
 
-<div class="ps rv"><span class="ps-n">02</span><h3>Modelo e enceramento</h3><p>O novo sorriso é desenhado e testado antes de qualquer peça definitiva.</p></div>
+<div class="ps rv"><span class="ps-n num" data-count="2" data-pad="2">02</span><h3>Modelo e enceramento</h3><p>O novo sorriso é desenhado e testado antes de qualquer peça definitiva.</p></div>
 
-<div class="ps rv"><span class="ps-n">03</span><h3>Confecção</h3><p>As peças são feitas sob medida no CS LAB.</p></div>
+<div class="ps rv"><span class="ps-n num" data-count="3" data-pad="2">03</span><h3>Confecção</h3><p>As peças são feitas sob medida no CS LAB.</p></div>
 
-<div class="ps rv"><span class="ps-n">04</span><h3>Prova e ajuste</h3><p>Cor e forma conferidas com o paciente, com ajustes na hora.</p></div>
+<div class="ps rv"><span class="ps-n num" data-count="4" data-pad="2">04</span><h3>Prova e ajuste</h3><p>Cor e forma conferidas com o paciente, com ajustes na hora.</p></div>
 
-<div class="ps rv"><span class="ps-n">05</span><h3>Cimentação</h3><p>Instalação final e orientações de acompanhamento.</p></div>
+<div class="ps rv"><span class="ps-n num" data-count="5" data-pad="2">05</span><h3>Cimentação</h3><p>Instalação final e orientações de acompanhamento.</p></div>
 
 </div>
 </div>
 </section>
 
-<section class="sec">
+<section class="sec alt">
 <div class="wrap sv-g">
 <div class="rv">
 <p class="eyebrow">O que fazemos</p>
 <h2 class="h2" style="margin-top: 20px">Peças sob medida, <em>uma a uma</em>.</h2>
 <p class="lead" style="margin-top: 24px">Trabalhos protéticos e estéticos confeccionados para cada sorriso, integrados ao planejamento clínico.</p>
-<p style="margin-top: 24px"><span class="ph-hold dark-hold">[lista de serviços a confirmar]</span></p>
+<p style="margin-top: 24px"><span class="ph-hold">[lista de serviços a confirmar]</span></p>
 </div>
 <ul class="sv rv">
 <li>Laminados e lentes cerâmicas<span>Estética</span></li>
@@ -350,7 +342,7 @@
 </div>
 </section>
 
-<section class="sec light" style="padding-bottom: 96px">
+<section class="sec" style="padding-bottom: 96px">
 <div class="wrap">
 <div class="sec-head rv">
 <div>
@@ -363,10 +355,11 @@
 <figure class="slot"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4V8z"></path><circle cx="12" cy="13" r="3.5"></circle></svg><p>[Foto da bancada do CS LAB]</p><span>Espaço reservado para fotos reais do laboratório</span></figure>
 <figure class="slot"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4V8z"></path><circle cx="12" cy="13" r="3.5"></circle></svg><p>[Foto de peças finalizadas]</p><span>Laminados, coroas ou modelos em close</span></figure>
 </div>
+<div class="gl-vid rv"><figure class="vid vid-wide"><span class="vid-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span><p>[Vídeo: bastidores do CS LAB]</p><span>A confecção de uma peça, da bancada à prova com o paciente</span></figure></div>
 </div>
 </section>
 
-<section class="sec light" id="parceiros" style="padding-top: 0">
+<section class="sec" id="parceiros" style="padding-top: 0">
 <div class="wrap">
 <div class="pa rv">
 <div>
@@ -375,7 +368,7 @@
 <p class="lead">Conte com o laboratório para os seus trabalhos protéticos e estéticos, com a mesma atenção dos casos da clínica.</p>
 </div>
 <div class="pa-cta">
-<a class="btn btn-dk" href="https://wa.me/5555997167672?text=Ol%C3%A1!%20Sou%20dentista%20e%20quero%20saber%20como%20enviar%20casos%20para%20o%20CS%20LAB." target="_blank" rel="noopener">Enviar um caso <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="btn btn-ac" href="https://wa.me/5555997167672?text=Ol%C3%A1!%20Sou%20dentista%20e%20quero%20saber%20como%20enviar%20casos%20para%20o%20CS%20LAB." target="_blank" rel="noopener">Enviar um caso <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 <span class="ph-hold">[manter só se o lab atender outros consultórios]</span>
 </div>
 </div>
@@ -385,10 +378,10 @@
 <footer class="ft">
 <div class="wrap">
 <div class="ft-top">
-<img src="/img/cslab-light.png" alt="CS LAB, Laboratório Odontológico" style="height: 72px; width: auto; display: block">
+<img src="/img/cslab-dark.png" alt="CS LAB, Laboratório Odontológico" style="height: 72px; width: auto; display: block">
 <div class="ft-logos">
-<a href="/" aria-label="Dr. José Carlos Schenini"><img src="/img/sig-light.png" alt="Dr. José Carlos Schenini" style="height: 44px"></a>
-<a href="/cursos" aria-label="Esthetic Pro"><img src="/img/esthetic-light.png" alt="Esthetic Pro" style="height: 40px"></a>
+<a href="/" aria-label="Dr. José Carlos Schenini"><img src="/img/sig-dark.png" alt="Dr. José Carlos Schenini" style="height: 44px"></a>
+<a href="/cursos" aria-label="Esthetic Pro"><img src="/img/esthetic-dark.png" alt="Esthetic Pro" style="height: 40px"></a>
 </div>
 </div>
 <div class="ft-bot">
