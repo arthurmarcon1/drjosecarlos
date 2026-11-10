@@ -6,7 +6,7 @@
   /* ---------- Início: casos antes/depois ---------- */
   var CASES = [
     { label: 'Facetas em resina composta', antes: '/img/caso-resina-antes.jpg', depois: '/img/caso-resina-depois.jpg',
-      desc: 'Correção de cor, forma e proporção com resina composta — técnica conservadora, feita em consultório e preservando ao máximo a estrutura do dente.' },
+      desc: 'Correção de cor, forma e proporção com resina composta. Técnica conservadora, feita em consultório, que preserva ao máximo a estrutura do dente.' },
     { label: 'Reabilitação em cerâmica', antes: '/img/caso-reab-antes.jpg', depois: '/img/caso-reab-depois.jpg',
       desc: 'Reconstrução do sorriso com peças cerâmicas quando vários dentes precisam de tratamento, devolvendo estética, função e confiança.' },
     { label: 'Facetas em cerâmica', antes: '/img/caso-ceram-antes.jpg', depois: '/img/caso-ceram-depois.jpg',
@@ -50,7 +50,7 @@
     var pag = 1;
     var optBtns = form.querySelectorAll('.opt');
     var send = form.querySelector('a.btn');
-    var val = function (id) { var el = document.getElementById(id); return (el && el.value.trim()) || '—'; };
+    var val = function (id) { var el = document.getElementById(id); return (el && el.value.trim()) || '(não informado)'; };
     var update = function () {
       optBtns.forEach(function (b, j) { b.classList.toggle('on', j === pag); b.setAttribute('aria-pressed', j === pag ? 'true' : 'false'); });
       send.href = wa([
