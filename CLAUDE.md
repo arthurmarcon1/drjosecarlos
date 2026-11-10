@@ -6,7 +6,7 @@ Site de um dentista de Santa Maria/RS, feito pela 3eTec (Arthur). Três páginas
 - `cursos.html` (rota `/cursos`): imersão **Esthetic Pro 2027**. Público: dentistas.
 - `laboratorio.html` (rota `/laboratorio`): **CS LAB**, laboratório odontológico dentro da clínica.
 
-Stack: HTML + CSS (no `<head>` de cada página) + `js/app.js` (vanilla). Deploy estático na Vercel (`vercel.json` com `cleanUrls`). Sem build.
+Stack: HTML + CSS (`css/base.css` com o que é comum às 3 páginas; o específico fica no `<style>` de cada página) + `js/app.js` (vanilla). Deploy estático na Vercel (`vercel.json` com `cleanUrls`). Sem build.
 
 ## Identidade visual
 - Cores: preto `#0A0A0B`, off-white `#EFEDE8` / `#F7F6F3`, roxo Esthetic Pro `#9418D6` (texto roxo em fundo claro `#7A12B5`, em fundo escuro `#BE5CF2`), laranja CS LAB `#F07A1F` (texto em fundo claro `#A34708`).
@@ -28,5 +28,5 @@ Stack: HTML + CSS (no `<head>` de cada página) + `js/app.js` (vanilla). Deploy 
 - Local: U.NOS Coworking em Saúde, Rua Pinheiro Machado, 2350, sala 610, Santa Maria/RS.
 - Dr.: natural de Itaqui/RS, Cirurgião-Dentista pela UFN em 2018, especialização em Implantodontia, membro da Sociedade Brasileira de Odontologia Reconstrutiva.
 
-## Pendências (vêm do briefing)
+## Pendências (vêm do briefing; lista detalhada em `PENDENCIAS.md`)
 CRO, endereço e horário do consultório, data e vagas da turma 2027, serviços e fotos do CS LAB, se o lab atende outros dentistas (seção "Para dentistas"), depoimentos, domínio.
