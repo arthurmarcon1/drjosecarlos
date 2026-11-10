@@ -29,6 +29,6 @@ Ao receber o dado, substituir o placeholder (e remover o destaque `ph-hold` / `d
 
 ## Técnico
 
-- **Domínio**: definir o domínio final. Depois disso, trocar `og:image` / `twitter:image` para URL absoluta do domínio e adicionar `<link rel="canonical">` e `og:url` em cada página.
+- **Domínio**: definir o domínio final. Hoje `og:url`, `og:image` e `twitter:image` apontam para `https://dr-jose-carlos-schenini.vercel.app`; ao ter o domínio, trocar nas 3 páginas e adicionar `<link rel="canonical">`.
 - **Imagem de compartilhamento (Open Graph)**: em cursos e laboratório a `og:image` é o logo claro em fundo transparente, que pode sumir em prévias com fundo branco (ex.: WhatsApp). Recomendado gerar imagens 1200x630 com fundo escuro.
 - **Revisões de tipografia**: há comentários `/* [revisar: ...] */` no CSS com alternativas de peso e tamanho dos títulos.

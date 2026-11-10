@@ -3,3 +3,4 @@ PROMPTS*.md
 CLAUDE.md
 PENDENCIAS.md
 README.md
+.env*
