@@ -9,6 +9,7 @@ h1,h2,h3{font-weight:400}
 /* tokens: branco clínico, grafite no lugar do preto, acento suave */
 .pg{--bg:#FFFFFF;--bg2:#F4F6F7;--bg3:#EBEFF1;--tx:#1E2328;--mu:#5F6870;--line:#E2E6E9;--line2:#CDD4D9;
   --ac:#7B4BAF;--ac-h:#683C98;--ac-ink:#7B4BAF;--ac-soft:#F4EFF9;--ac-line:#D9CBEA;
+  --card:#FFFFFF;--card-a:rgba(255,255,255,.92);--hdr:rgba(255,255,255,.96);--veil:rgba(255,255,255,.88);
   font-family:Montserrat,system-ui,sans-serif;color:var(--tx);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden;font-size:16px}
 /* CS LAB: laranja queimado (o laranja vivo do logo fica só no logo) */
 .pg-lab{--ac:#A9531A;--ac-h:#8F4513;--ac-ink:#A9531A;--ac-soft:#FBF2EA;--ac-line:#EFD2BC}
@@ -18,6 +19,23 @@ h1,h2,h3{font-weight:400}
 .alt{background:var(--bg2)}
 .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:64px;flex-wrap:wrap}
 .sec-head .h2{margin-top:20px}
+
+/* modo escuro: <html data-theme="dark">, definido pelo script do <head> e pelo botão do topo */
+[data-theme="dark"]{color-scheme:dark}
+[data-theme="dark"] body{background:#131619}
+[data-theme="dark"] .pg{--bg:#131619;--bg2:#191D21;--bg3:#22272C;--tx:#E9EBED;--mu:#A5AEB6;--line:#2A3036;--line2:#3A424A;
+  --ac:#8A5AC0;--ac-h:#9C6FD0;--ac-ink:#C3A4E8;--ac-soft:#231D2C;--ac-line:#43365A;
+  --card:#1C2025;--card-a:rgba(28,32,37,.92);--hdr:rgba(19,22,25,.96);--veil:rgba(19,22,25,.86)}
+[data-theme="dark"] .pg-lab,[data-theme="dark"] .fr-lab{--ac:#B35C1F;--ac-h:#C46A2A;--ac-ink:#EBA572;--ac-soft:#281E16;--ac-line:#4E3726}
+/* logos: versão escura no tema claro, versão clara no tema escuro */
+[data-theme="dark"] .th-l,:root:not([data-theme="dark"]) .th-d{display:none!important}
+.pg{transition:background-color .3s,color .3s}
+
+/* botão de tema */
+.theme-t{appearance:none;flex:none;width:44px;height:44px;border-radius:6px;border:1px solid var(--line2);background:var(--card);color:var(--tx);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .2s,color .2s}
+.theme-t:hover{border-color:var(--tx)}
+.theme-t .i-sun,[data-theme="dark"] .theme-t .i-moon{display:none}
+[data-theme="dark"] .theme-t .i-sun{display:block}
 
 /* tipografia */
 .eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;color:var(--mu)}
@@ -32,11 +50,11 @@ h1,h2,h3{font-weight:400}
 .btn:hover svg{transform:translateX(4px)}
 .btn-ac{background:var(--ac);color:#fff}
 .btn-ac:hover{background:var(--ac-h)}
-.btn-line{background:#fff;border-color:var(--line2);color:var(--tx)}
+.btn-line{background:var(--card);border-color:var(--line2);color:var(--tx)}
 .btn-line:hover{border-color:var(--tx)}
 
 /* header */
-.hdr{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);color:var(--tx)}
+.hdr{position:sticky;top:0;z-index:50;background:var(--hdr);border-bottom:1px solid var(--line);color:var(--tx)}
 .hdr-in{display:flex;align-items:center;gap:36px;height:78px}
 .brand{display:block;line-height:0}
 .brand img{height:44px;width:auto}
@@ -76,7 +94,7 @@ h1,h2,h3{font-weight:400}
 
 /* depoimentos */
 .dep-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.dep{border:1px solid var(--line);border-radius:8px;background:#fff;display:flex;flex-direction:column;overflow:hidden}
+.dep{border:1px solid var(--line);border-radius:8px;background:var(--card);display:flex;flex-direction:column;overflow:hidden}
 .dep .vid{border-radius:0;border:0;border-bottom:1px dashed var(--line2)}
 .dep-b{padding:28px 28px 30px;display:flex;flex-direction:column;gap:18px;flex:1}
 .dep-q{font-size:16px;line-height:1.7;color:var(--tx)}
@@ -87,7 +105,7 @@ h1,h2,h3{font-weight:400}
 .dep-who span{display:block;margin-top:4px;font-size:12.5px;color:var(--mu)}
 
 /* rodapé */
-.ft{background:#fff;color:var(--mu);padding:72px 0 40px;border-top:1px solid var(--line)}
+.ft{background:var(--card);color:var(--mu);padding:72px 0 40px;border-top:1px solid var(--line)}
 .ft-top{display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap}
 .ft-logos{display:flex;align-items:center;gap:40px;flex-wrap:wrap}
 .ft-logos img{display:block;width:auto}
@@ -130,8 +148,12 @@ h1,h2,h3{font-weight:400}
 @media (max-width:860px){
   .hdr-in{flex-wrap:wrap;height:auto;padding:12px 0 0;gap:10px 16px}
   .brand img{height:36px}
-  .hdr .btn{margin-left:auto;min-height:44px;padding:0 14px;font-size:11.5px}
+  .theme-t{margin-left:auto}
+  .hdr .btn{min-height:44px;padding:0 14px;font-size:11.5px}
   .nav{order:3;width:100%;margin:0;overflow-x:auto;gap:24px;padding-bottom:2px}
+}
+@media (max-width:480px){
+  .hdr .btn{display:none} /* no celular a ação principal fica no botão flutuante */
 }
 @media (max-width:640px){
   .wrap{padding:0 20px}

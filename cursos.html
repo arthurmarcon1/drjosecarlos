@@ -2,9 +2,10 @@
 <html lang="pt-BR"><head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8">
+<script>(function(){var t;try{t=localStorage.getItem("tema")}catch(e){}if(t!=="dark"&&t!=="light")t=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t)})()</script>
 <title>Esthetic Pro 2027 | Imersão em Estética Dental</title>
 <meta name="description" content="Imersão Esthetic Pro 2027 com o Dr. José Carlos Schenini em Santa Maria/RS: aula teórica, hands-on de resina e cimentação de laminados cerâmicos ao vivo. Para cirurgiões-dentistas.">
-<meta name="theme-color" content="#0A0A0B">
+<meta name="theme-color" content="#FFFFFF">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dr-jose-carlos-schenini.vercel.app/cursos">
 <meta property="og:locale" content="pt_BR">
@@ -32,14 +33,14 @@
 /* hero */
 .hero{position:relative;min-height:720px;display:flex;align-items:center;padding:104px 0 96px;overflow:hidden;isolation:isolate;text-align:center}
 .hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;filter:grayscale(1) blur(2px);transform:scale(1.06);animation:zoomOut 3s cubic-bezier(.2,.7,.2,1) both}
-.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(255,255,255,.88)}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--veil)}
 .hero-in{width:100%}
 .hero-logo{width:min(720px,88%);height:auto;display:block;margin:0 auto}
-.hero-year{display:inline-block;margin-top:28px;font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:var(--mu);padding:8px 14px;border:1px solid var(--line2);border-radius:4px;background:#fff}
+.hero-year{display:inline-block;margin-top:28px;font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:var(--mu);padding:8px 14px;border:1px solid var(--line2);border-radius:4px;background:var(--card)}
 .hero h1{font-weight:300;text-transform:uppercase;font-size:clamp(26px,3.4vw,46px);line-height:1.2;letter-spacing:.01em;margin:44px auto 0;max-width:22ch}
 .hero h1 strong{font-weight:600;color:var(--ac-ink)}
 .chips{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:40px}
-.chip{display:flex;align-items:center;gap:10px;padding:12px 16px;border:1px solid var(--line);border-radius:6px;background:#fff;font-size:13px;letter-spacing:.04em;color:var(--tx)}
+.chip{display:flex;align-items:center;gap:10px;padding:12px 16px;border:1px solid var(--line);border-radius:6px;background:var(--card);font-size:13px;letter-spacing:.04em;color:var(--tx)}
 .chip svg{color:var(--ac);flex:none}
 .hero-cta{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:44px}
 @keyframes zoomOut{from{transform:scale(1.16)}to{transform:scale(1.06)}}
@@ -57,18 +58,18 @@
 
 /* aprender */
 .ap-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.ap{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}
-.ap-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;background:#fff}
+.ap{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card)}
+.ap-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;background:var(--card)}
 .ap-pair figure{margin:0;position:relative;aspect-ratio:1/1;overflow:hidden}
 .ap-pair img{width:100%;height:100%;object-fit:cover;display:block}
-.ap-pair figcaption{position:absolute;left:10px;bottom:10px;background:rgba(255,255,255,.92);color:var(--tx);padding:5px 9px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;border-radius:4px}
+.ap-pair figcaption{position:absolute;left:10px;bottom:10px;background:var(--card-a);color:var(--tx);padding:5px 9px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;border-radius:4px}
 .ap-b{padding:24px 24px 28px}
 .ap-b h3{font-size:19px;letter-spacing:-.01em}
 .ap-b p{margin-top:10px;font-size:14.5px;line-height:1.65;color:var(--mu)}
 
 /* cronograma */
 .cr-g{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:20px;align-items:stretch}
-.day{border-radius:8px;padding:44px;background:#fff;color:var(--tx);border:1px solid var(--line)}
+.day{border-radius:8px;padding:44px;background:var(--card);color:var(--tx);border:1px solid var(--line)}
 .day-h{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding-bottom:22px;border-bottom:1px solid var(--line)}
 .day-h h3{text-transform:uppercase;font-size:36px;line-height:1;letter-spacing:-.01em;font-weight:300}
 .day-h span{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--ac-ink)}
@@ -119,7 +120,7 @@
 .val .lead{margin-top:22px}
 .val-cta{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
 .val-cta p{font-size:13px;color:var(--mu);line-height:1.6}
-.badges{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 36px;margin-top:20px;padding:22px;border:1px solid var(--line);border-radius:8px;background:#fff}
+.badges{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 36px;margin-top:20px;padding:22px;border:1px solid var(--line);border-radius:8px;background:var(--card)}
 .badges span{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
 .badges svg{color:var(--ac)}
 
@@ -137,7 +138,7 @@
 .form{border:1px solid var(--line);border-radius:8px;padding:40px;background:var(--bg2)}
 .fld{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
 .fld label{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:600}
-.fld input{height:52px;border:1px solid var(--line2);border-radius:6px;background:#fff;padding:0 16px;font:400 16px Montserrat,sans-serif;color:var(--tx);outline:none;transition:border-color .2s,box-shadow .2s}
+.fld input{height:52px;border:1px solid var(--line2);border-radius:6px;background:var(--card);padding:0 16px;font:400 16px Montserrat,sans-serif;color:var(--tx);outline:none;transition:border-color .2s,box-shadow .2s}
 .fld input:focus{border-color:var(--ac);box-shadow:0 0 0 3px rgba(123,75,175,.15)}
 .row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .form .btn{width:100%;margin-top:10px;min-height:56px}
@@ -177,13 +178,14 @@
 
 <header class="hdr">
 <div class="wrap hdr-in">
-<a class="brand" href="/" aria-label="Dr. José Carlos Schenini: página inicial"><img src="/img/sig-dark.png" alt="Dr. José Carlos Schenini, Reabilitação Oral"></a>
+<a class="brand" href="/" aria-label="Dr. José Carlos Schenini: página inicial"><img class="th-l" src="/img/sig-dark.png" alt="Dr. José Carlos Schenini, Reabilitação Oral"><img class="th-d" src="/img/sig-light.png" alt="Dr. José Carlos Schenini, Reabilitação Oral"></a>
 <nav class="nav" aria-label="Principal">
 <a href="/">Início</a>
 <a class="on" href="/cursos">Cursos</a>
 <a href="/laboratorio">Laboratório</a>
 <a href="#valores">Valores</a>
 </nav>
+<button class="theme-t" type="button" aria-label="Ativar modo escuro" title="Modo claro / escuro"><svg class="i-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"></path></svg><svg class="i-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></button>
 <a class="btn btn-ac" href="#inscricao">Garantir vaga</a>
 </div>
 </header>
@@ -191,7 +193,7 @@
 <section class="hero">
 <img class="bg" src="/img/capa.jpg" alt="">
 <div class="wrap hero-in">
-<img class="hero-logo rise d1" src="/img/esthetic-dark.png" alt="Esthetic Pro, Imersão em Estética Dental">
+<img class="th-l hero-logo rise d1" src="/img/esthetic-dark.png" alt="Esthetic Pro, Imersão em Estética Dental"><img class="th-d hero-logo rise d1" src="/img/esthetic-light.png" alt="Esthetic Pro, Imersão em Estética Dental">
 <p class="rise d2"><span class="hero-year">Turma 2027</span></p>
 <h1 class="rise d3">Quer ter mais <strong>confiança</strong> nos teus casos de <strong>odontologia estética</strong>?</h1>
 <div class="chips rise d4">
@@ -222,7 +224,7 @@
 <div class="rv">
 <p class="eyebrow">Introdução</p>
 <p class="quote">Nessa imersão, quero te mostrar todo o meu fluxo de trabalho e te ajudar a resolver casos estéticos com excelência, para que tu consigas te diferenciar no mercado.</p>
-<div class="intro-sig"><img src="/img/sig-dark.png" alt="Dr. José Carlos Schenini, Reabilitação Oral"></div>
+<div class="intro-sig"><img class="th-l" src="/img/sig-dark.png" alt="Dr. José Carlos Schenini, Reabilitação Oral"><img class="th-d" src="/img/sig-light.png" alt="Dr. José Carlos Schenini, Reabilitação Oral"></div>
 <p class="lead" style="margin-top: 28px">Membro da Sociedade Brasileira de Odontologia Reconstrutiva, formado pela UFN em 2018 e especialista em Implantodontia. Foi na odontologia estética que ele se encontrou, e é esse caminho que compartilha na imersão.</p>
 </div>
 <div class="intro-ph rv">
@@ -507,10 +509,10 @@
 <footer class="ft">
 <div class="wrap">
 <div class="ft-top">
-<img src="/img/esthetic-dark.png" alt="Esthetic Pro, Imersão em Estética Dental" style="height: 56px; width: auto; display: block">
+<img class="th-l" src="/img/esthetic-dark.png" alt="Esthetic Pro, Imersão em Estética Dental" style="height: 56px; width: auto; display: block"><img class="th-d" src="/img/esthetic-light.png" alt="Esthetic Pro, Imersão em Estética Dental" style="height: 56px; width: auto; display: block">
 <div class="ft-logos">
-<a href="/" aria-label="Dr. José Carlos Schenini"><img src="/img/sig-dark.png" alt="Dr. José Carlos Schenini" style="height: 44px"></a>
-<a href="/laboratorio" aria-label="CS LAB"><img src="/img/cslab-dark.png" alt="CS LAB" style="height: 56px"></a>
+<a href="/" aria-label="Dr. José Carlos Schenini"><img class="th-l" src="/img/sig-dark.png" alt="Dr. José Carlos Schenini" style="height: 44px"><img class="th-d" src="/img/sig-light.png" alt="Dr. José Carlos Schenini" style="height: 44px"></a>
+<a href="/laboratorio" aria-label="CS LAB"><img class="th-l" src="/img/cslab-dark.png" alt="CS LAB" style="height: 56px"><img class="th-d" src="/img/cslab-light.png" alt="CS LAB" style="height: 56px"></a>
 </div>
 </div>
 <div class="ft-bot">

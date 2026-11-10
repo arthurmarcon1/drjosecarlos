@@ -15,6 +15,7 @@ Stack: HTML + CSS (`css/base.css` com o que é comum às 3 páginas; o específi
   - Nada de seção preta. Escurecer só sobre foto (degradê para legibilidade).
 - Logos em `/img`: use as versões `-dark` (para fundo claro): `sig-dark.png`, `esthetic-dark.png`, `cslab-dark.png`. A `sig-light.png` só aparece sobre a foto do hero. `ep-light.png` é o monograma EP.
 - Componentes do `base.css`: `.stats`/`.stat` (faixa de números), `.num[data-count]` / `.num[data-since]` (números que sobem, animados pelo `app.js`), `.vid` (placeholder de vídeo: `vid-169`, `vid-916`, `vid-45`, `vid-wide`), `.dep` (depoimento), `.slot` (placeholder de foto), `.ph-hold` (placeholder de texto).
+- **Modo claro/escuro**: `<html data-theme="light|dark">`. Um script inline no `<head>` de cada página aplica a escolha salva (`localStorage` "tema") ou a do sistema; o botão `.theme-t` no header alterna (código em `app.js`). Tokens escuros em `[data-theme="dark"] .pg` no `base.css`. Cores de fundo sempre por token (`--bg`, `--bg2`, `--card`, `--hdr`, `--veil`), nunca `#fff` fixo. Logos têm par `th-l` (versão escura, tema claro) e `th-d` (versão clara, tema escuro).
 - Animações respeitam `prefers-reduced-motion`: nesse modo param o que se desloca (faixa, zoom, subida), mas ficam os fades e os números contando.
 - Fotos dos casos e das edições do curso vieram do PDF do cliente (resolução limitada; serão trocadas pelos originais).
 

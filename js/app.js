@@ -11,6 +11,27 @@
     els.forEach(function (el) { io.observe(el); });
   };
 
+  /* ---------- Modo claro / escuro ----------
+     O tema inicial é definido por um script no <head> (escolha salva ou a do sistema). */
+  var root = document.documentElement;
+  var themeMeta = document.querySelector('meta[name="theme-color"]');
+  var applyTheme = function (t) {
+    root.setAttribute('data-theme', t);
+    if (themeMeta) themeMeta.setAttribute('content', t === 'dark' ? '#131619' : '#FFFFFF');
+    document.querySelectorAll('.theme-t').forEach(function (b) {
+      b.setAttribute('aria-label', t === 'dark' ? 'Ativar modo claro' : 'Ativar modo escuro');
+      b.setAttribute('aria-pressed', t === 'dark' ? 'true' : 'false');
+    });
+  };
+  applyTheme(root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
+  document.querySelectorAll('.theme-t').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var t = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(t);
+      try { localStorage.setItem('tema', t); } catch (e) {}
+    });
+  });
+
   /* ---------- Revelação ao rolar (fallback para navegadores sem animation-timeline) ---------- */
   var supportsTimeline = window.CSS && CSS.supports && CSS.supports('animation-timeline: view()');
   if (!supportsTimeline && hasIO) {
