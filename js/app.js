@@ -1,4 +1,19 @@
 /* Interações do site (vanilla JS, sem dependências). */
+
+/* ---------- Depoimentos de pacientes (página inicial) ----------
+   Para publicar, coloque o arquivo em /img/depoimentos/ e preencha os campos.
+   tipo: 'print' (imagem do depoimento) ou 'video' (vídeo vertical 9:16, abre num modal)
+   arquivo: caminho do arquivo; vazio = card de placeholder
+   capa: (opcional, só vídeo) imagem mostrada antes de dar play
+   Só publicar depoimentos reais, com autorização do paciente. */
+var DEPOIMENTOS_PACIENTES = [
+  { tipo: 'print', arquivo: '', nome: '', tratamento: '' },
+  { tipo: 'video', arquivo: '', capa: '', nome: '', tratamento: '' },
+  { tipo: 'print', arquivo: '', nome: '', tratamento: '' },
+  { tipo: 'video', arquivo: '', capa: '', nome: '', tratamento: '' },
+  { tipo: 'print', arquivo: '', nome: '', tratamento: '' }
+];
+
 (function () {
   var PHONE = '5555997167672';
   var wa = function (msg) { return 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent(msg); };
@@ -100,6 +115,68 @@
         range.value = 50; setPos(50);
       });
     });
+  }
+
+  /* ---------- Início: carrossel de depoimentos ---------- */
+  var track = document.getElementById('dp-track');
+  if (track && window.DEPOIMENTOS_PACIENTES) {
+    var esc = function (t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+    var PLAY = '<span class="dp-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>';
+    var nP = 0, nV = 0;
+    track.innerHTML = DEPOIMENTOS_PACIENTES.map(function (d, i) {
+      var isV = d.tipo === 'video', n = isV ? ++nV : ++nP;
+      var label = isV ? 'Vídeo depoimento ' + n : 'Print depoimento ' + n;
+      var nome = d.nome ? esc(d.nome) : '<span class="ph-hold">[Nome do paciente]</span>';
+      var trat = d.tratamento ? esc(d.tratamento) : '<span class="ph-hold">[Tratamento]</span>';
+      var media;
+      if (!d.arquivo) {
+        media = '<span class="dp-ph"><em class="dp-tag">placeholder</em>' + (isV ? PLAY : '') + '<span>[' + label + ']</span></span>';
+      } else if (isV) {
+        media = (d.capa ? '<img src="' + esc(d.capa) + '" alt="" loading="lazy">' : '<span class="dp-ph"></span>') + PLAY;
+      } else {
+        media = '<img src="' + esc(d.arquivo) + '" alt="Depoimento de ' + esc(d.nome || 'paciente') + '" loading="lazy">';
+      }
+      var mediaEl = isV
+        ? '<button class="dp-media" type="button" data-i="' + i + '" aria-label="Assistir ' + (d.nome ? 'depoimento de ' + esc(d.nome) : label) + '">' + media + '</button>'
+        : '<div class="dp-media">' + media + '</div>';
+      return '<article class="dp' + (isV ? ' dp-v' : '') + '">' + mediaEl + '<p class="dp-cap"><b>' + nome + '</b><span>' + trat + '</span></p></article>';
+    }).join('');
+
+    var cards = function () { return track.querySelectorAll('.dp'); };
+    var prev = document.querySelector('[data-car="-1"]'), next = document.querySelector('[data-car="1"]');
+    var updateArrows = function () {
+      var max = track.scrollWidth - track.clientWidth - 2;
+      if (prev) prev.disabled = track.scrollLeft <= 2;
+      if (next) next.disabled = track.scrollLeft >= max;
+    };
+    [prev, next].forEach(function (b) {
+      if (!b) return;
+      b.addEventListener('click', function () {
+        var c = cards()[0]; var stepW = c ? c.getBoundingClientRect().width + 16 : 280;
+        track.scrollBy({ left: Number(b.getAttribute('data-car')) * stepW, behavior: 'smooth' });
+      });
+    });
+    track.addEventListener('scroll', updateArrows, { passive: true });
+    window.addEventListener('resize', updateArrows);
+    updateArrows();
+
+    // modal de vídeo: o arquivo só é carregado quando o modal abre
+    var modal = document.getElementById('vmodal');
+    if (modal && modal.showModal) {
+      var body = modal.querySelector('.vmodal-b');
+      var close = function () { modal.close(); };
+      modal.addEventListener('close', function () { body.innerHTML = ''; });
+      modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
+      modal.querySelector('.vmodal-x').addEventListener('click', close);
+      track.addEventListener('click', function (e) {
+        var btn = e.target.closest('button.dp-media'); if (!btn) return;
+        var d = DEPOIMENTOS_PACIENTES[Number(btn.getAttribute('data-i'))];
+        body.innerHTML = d.arquivo
+          ? '<video src="' + esc(d.arquivo) + '"' + (d.capa ? ' poster="' + esc(d.capa) + '"' : '') + ' controls autoplay playsinline></video>'
+          : '<div class="vmodal-ph"><p>' + esc(btn.querySelector('.dp-ph > span:last-child') ? btn.querySelector('.dp-ph > span:last-child').textContent : '[Vídeo]') + '</p><span>O vídeo entra aqui quando o arquivo for enviado.</span></div>';
+        modal.showModal();
+      });
+    }
   }
 
   /* ---------- Cursos: contato pelo WhatsApp (valores e condições são combinados na conversa) ---------- */
