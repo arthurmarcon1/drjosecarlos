@@ -50,11 +50,22 @@ var DEPOIMENTOS_PACIENTES = [
   /* ---------- Medição: Vercel Web Analytics + evento a cada clique no WhatsApp ----------
      O script só existe no deploy da Vercel; no localhost não é carregado.
      Evento: "whatsapp_click" com { origem, pagina }. A origem vem do atributo data-origem
-     ou é deduzida pelo lugar do link (topo, hero, tratamento X, contato, inscrição...). */
+     ou é deduzida pelo lugar do link (topo, hero, tratamento X, contato, inscrição...).
+     No plano Hobby a Vercel não mostra eventos personalizados, então o evento vai também
+     para o Umami Cloud (gratuito, sem cookies). O Umami só registra o evento: a contagem
+     de visitas automática dele fica desligada (data-auto-track="false"); visitas ficam na Vercel.
+     Para ativar: troque [UMAMI_WEBSITE_ID] pelo Website ID do site no painel do Umami. */
+  var UMAMI_WEBSITE_ID = '[UMAMI_WEBSITE_ID]';
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   if (!/^(localhost|127\.|0\.0\.0\.0|\[::1\])/.test(location.hostname)) {
     var vs = document.createElement('script'); vs.defer = true; vs.src = '/_vercel/insights/script.js';
     document.head.appendChild(vs);
+    if (!/^\[/.test(UMAMI_WEBSITE_ID)) {
+      var us = document.createElement('script'); us.defer = true; us.src = 'https://cloud.umami.is/script.js';
+      us.setAttribute('data-website-id', UMAMI_WEBSITE_ID);
+      us.setAttribute('data-auto-track', 'false');
+      document.head.appendChild(us);
+    }
   }
   var origemDe = function (a) {
     if (a.getAttribute('data-origem')) return a.getAttribute('data-origem');
@@ -72,7 +83,9 @@ var DEPOIMENTOS_PACIENTES = [
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[href*="wa.me/"]');
     if (!a) return;
-    window.va('event', { name: 'whatsapp_click', data: { origem: origemDe(a), pagina: location.pathname || '/' } });
+    var dados = { origem: origemDe(a), pagina: location.pathname || '/' };
+    window.va('event', { name: 'whatsapp_click', data: dados });
+    if (window.umami && typeof window.umami.track === 'function') window.umami.track('whatsapp_click', dados);
   });
 
   /* ---------- Revelação ao rolar (todos os navegadores, via IntersectionObserver) ---------- */

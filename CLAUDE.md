@@ -1,6 +1,6 @@
 # Site Dr. José Carlos Schenini (protótipo)
 
-Site de um dentista de Santa Maria/RS, feito pela 3eTec (Arthur). Três páginas estáticas:
+Site de um dentista com consultório em Itaqui/RS (o curso acontece em Santa Maria/RS), feito pela 3eTec (Arthur). Três páginas estáticas:
 
 - `index.html` (rota `/`): página inicial, marca pessoal "Dr. José Carlos Schenini, Reabilitação Oral". Público: pacientes.
 - `cursos.html` (rota `/cursos`): imersão **Esthetic Pro 2027**. Público: dentistas.
@@ -43,7 +43,7 @@ Estes dados prevalecem sobre qualquer texto antigo do site. Ao copiar, manter a 
 
 CONSULTÓRIO
 - CRO-RS 26.112
-- Endereço: Rua Euclides Aranha, 1269, sala 1, Santa Maria/RS
+- Endereço: Rua Euclides Aranha, 1269, sala 1, Centro, Itaqui/RS, CEP 97650-000 (confirmado em 16/11/2026; a página inicial e o laboratório falam de Itaqui, só /cursos fala de Santa Maria)
 - Atendimento: segunda a sexta, das 8h às 12h e das 14h às 18h30
 - Tratamentos a incluir além dos atuais: clínica geral, cirurgia oral, clareamento e prótese
 - Público: pacientes de qualquer idade
@@ -69,5 +69,9 @@ Reforço das regras ao usar estes dados:
 - Nunca inventar número, data ou depoimento.
 - O que faltar vira placeholder entre colchetes.
 
-## Pendências (lista detalhada em `PENDENCIAS.md`)
-Números que faltam (sorrisos planejados, alunos das edições), depoimentos de pacientes e alunos (o cliente vai enviar), vídeos, fotos do CS LAB, domínio.
+## Pendências
+A lista oficial de pendências é o `PAUTA-CALL.md` (placeholders, perguntas ao cliente e anotações da call). O antigo `PENDENCIAS.md` foi apagado: atualize sempre o `PAUTA-CALL.md`. Ele não vai para o deploy (`.vercelignore`).
+
+## Medição
+- Visitas: Vercel Web Analytics.
+- Evento `whatsapp_click` com `{ origem, pagina }`: enviado para a Vercel e para o Umami Cloud (o plano Hobby da Vercel não mostra eventos personalizados). O Umami fica com a contagem automática de visitas desligada. ID do site na constante `UMAMI_WEBSITE_ID` do `js/app.js`; enquanto for `[UMAMI_WEBSITE_ID]`, o script do Umami não carrega.
