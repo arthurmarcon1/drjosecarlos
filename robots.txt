@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dr-jose-carlos-schenini.vercel.app/sitemap.xml

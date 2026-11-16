@@ -47,9 +47,36 @@ var DEPOIMENTOS_PACIENTES = [
     });
   });
 
-  /* ---------- Revelação ao rolar (fallback para navegadores sem animation-timeline) ---------- */
-  var supportsTimeline = window.CSS && CSS.supports && CSS.supports('animation-timeline: view()');
-  if (!supportsTimeline && hasIO) {
+  /* ---------- Medição: Vercel Web Analytics + evento a cada clique no WhatsApp ----------
+     O script só existe no deploy da Vercel; no localhost não é carregado.
+     Evento: "whatsapp_click" com { origem, pagina }. A origem vem do atributo data-origem
+     ou é deduzida pelo lugar do link (topo, hero, tratamento X, contato, inscrição...). */
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  if (!/^(localhost|127\.|0\.0\.0\.0|\[::1\])/.test(location.hostname)) {
+    var vs = document.createElement('script'); vs.defer = true; vs.src = '/_vercel/insights/script.js';
+    document.head.appendChild(vs);
+  }
+  var origemDe = function (a) {
+    if (a.getAttribute('data-origem')) return a.getAttribute('data-origem');
+    if (a.closest('.hdr')) return 'topo';
+    if (a.classList.contains('fab')) return 'botao-flutuante';
+    if (a.classList.contains('tl-r')) return 'tratamento: ' + a.querySelector('.tl-t').textContent.trim();
+    if (a.closest('form.form')) return 'inscricao-curso';
+    if (a.closest('.hero')) return 'hero';
+    if (a.classList.contains('ct-big')) return 'contato-telefone';
+    var sec = a.closest('section');
+    if (sec && sec.id) return sec.id;
+    var eb = sec && sec.querySelector('.eyebrow');
+    return eb ? eb.textContent.trim().toLowerCase() : 'outro';
+  };
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href*="wa.me/"]');
+    if (!a) return;
+    window.va('event', { name: 'whatsapp_click', data: { origem: origemDe(a), pagina: location.pathname || '/' } });
+  });
+
+  /* ---------- Revelação ao rolar (todos os navegadores, via IntersectionObserver) ---------- */
+  if (hasIO) {
     document.documentElement.classList.add('io');
     onVisible(Array.prototype.slice.call(document.querySelectorAll('.rv')), function (el) { el.classList.add('in'); },
       { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
@@ -60,8 +87,9 @@ var DEPOIMENTOS_PACIENTES = [
      <span class="num" data-since="2018">8</span>     anos desde 2018 (atualiza sozinho)
      data-pad="2" completa com zero (01, 02...). Sem JS, o número final já está no HTML. */
   var nums = Array.prototype.slice.call(document.querySelectorAll('.num[data-count], .num[data-since]'));
+  var nf = window.Intl ? new Intl.NumberFormat('pt-BR') : null;
   var fmt = function (el, v) {
-    var s = Math.round(v).toLocaleString('pt-BR');
+    var s = nf ? nf.format(Math.round(v)) : String(Math.round(v));
     var pad = Number(el.getAttribute('data-pad') || 0);
     while (s.length < pad) s = '0' + s;
     el.textContent = s;
@@ -98,6 +126,13 @@ var DEPOIMENTOS_PACIENTES = [
     var line = ba.querySelector('.ba-line');
     var range = ba.querySelector('.ba-range');
     var tabs = document.querySelectorAll('.tab');
+    // Troca a imagem dentro de <picture>: atualiza o srcset WebP (mesmos tamanhos para todos os casos) e o src de fallback.
+    var base = function (p) { return p.replace(/^.*\//, '').replace(/\.\w+$/, ''); };
+    var swapImg = function (img, path) {
+      var pic = img.parentNode, source = pic && pic.tagName === 'PICTURE' ? pic.querySelector('source') : null;
+      if (source) source.srcset = source.srcset.split(base(img.getAttribute('src'))).join(base(path));
+      img.src = path;
+    };
     var setPos = function (v) {
       before.style.clipPath = 'inset(0 ' + (100 - v) + '% 0 0)';
       line.style.left = v + '%';
@@ -107,8 +142,8 @@ var DEPOIMENTOS_PACIENTES = [
       tab.addEventListener('click', function () {
         var c = CASES[i];
         tabs.forEach(function (t, j) { t.classList.toggle('on', j === i); t.setAttribute('aria-selected', j === i ? 'true' : 'false'); });
-        imgs[0].src = c.depois; imgs[0].alt = 'Depois: ' + c.label;
-        imgs[1].src = c.antes;  imgs[1].alt = 'Antes: ' + c.label;
+        swapImg(imgs[0], c.depois); imgs[0].alt = 'Depois: ' + c.label;
+        swapImg(imgs[1], c.antes);  imgs[1].alt = 'Antes: ' + c.label;
         document.querySelector('.case-n').textContent = '0' + (i + 1) + ' / 03';
         document.querySelector('.case-t').textContent = c.label;
         document.querySelector('.case-d').textContent = c.desc;
@@ -144,10 +179,27 @@ var DEPOIMENTOS_PACIENTES = [
 
     var cards = function () { return track.querySelectorAll('.dp'); };
     var prev = document.querySelector('[data-car="-1"]'), next = document.querySelector('[data-car="1"]');
+    // Setas: o estado vem de um IntersectionObserver no primeiro e no último card
+    // (ler scrollWidth no carregamento forçava o layout da página inteira).
+    var all = cards(), first = all[0], last = all[all.length - 1];
+    var edge = { first: true, last: false };
+    var paint = function () { if (prev) prev.disabled = edge.first; if (next) next.disabled = edge.last; };
+    if (hasIO && first) {
+      var eio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          var full = e.intersectionRatio > 0.95;
+          if (e.target === first) edge.first = full;
+          if (e.target === last) edge.last = full;
+        });
+        paint();
+      }, { root: track, threshold: [0, 0.95, 1] });
+      eio.observe(first); if (last !== first) eio.observe(last);
+    }
     var updateArrows = function () {
-      var max = track.scrollWidth - track.clientWidth - 2;
-      if (prev) prev.disabled = track.scrollLeft <= 2;
-      if (next) next.disabled = track.scrollLeft >= max;
+      if (hasIO) return;
+      edge.first = track.scrollLeft <= 2;
+      edge.last = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
+      paint();
     };
     [prev, next].forEach(function (b) {
       if (!b) return;
@@ -156,9 +208,8 @@ var DEPOIMENTOS_PACIENTES = [
         track.scrollBy({ left: Number(b.getAttribute('data-car')) * stepW, behavior: 'smooth' });
       });
     });
-    track.addEventListener('scroll', updateArrows, { passive: true });
-    window.addEventListener('resize', updateArrows);
-    updateArrows();
+    paint();
+    if (!hasIO) { track.addEventListener('scroll', updateArrows, { passive: true }); window.addEventListener('resize', updateArrows); }
 
     // modal de vídeo: o arquivo só é carregado quando o modal abre
     var modal = document.getElementById('vmodal');

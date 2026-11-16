@@ -4,6 +4,8 @@ body{margin:0;background:#FFFFFF}
 *{box-sizing:border-box}
 a{color:inherit}
 h1,h2,h3,h4,p{margin:0}
+picture{display:contents} /* <picture> só troca o formato (WebP); o layout continua do <img> */
+picture > source{display:none} /* sem isso o <source> vira item de flex/grid e desloca o layout */
 h1,h2,h3{font-weight:400}
 
 /* tokens: branco clínico, grafite no lugar do preto, acento suave */
@@ -16,6 +18,8 @@ h1,h2,h3{font-weight:400}
 
 .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
 .sec{padding:120px 0}
+/* performance: seções fora da tela só são renderizadas quando chegam perto (o visual não muda) */
+.sec,.ft{content-visibility:auto;contain-intrinsic-size:auto 900px}
 .alt{background:var(--bg2)}
 .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:64px;flex-wrap:wrap}
 .sec-head .h2{margin-top:20px}
@@ -124,10 +128,7 @@ h1,h2,h3{font-weight:400}
 @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
 @keyframes fade{from{opacity:0}to{opacity:1}}
 @keyframes write{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
-@supports (animation-timeline: view()){
-  .rv{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 38%}
-}
-/* navegadores sem animation-timeline (Safari, Firefox): o app.js marca <html class="io"> e revela com IntersectionObserver */
+/* revelação ao rolar: o app.js marca <html class="io"> e adiciona .in quando o elemento entra na tela (IntersectionObserver) */
 .io .rv{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
 .io .rv.in{opacity:1;transform:none}
 /* Movimento reduzido (configuração do sistema): para o que se desloca na tela,
