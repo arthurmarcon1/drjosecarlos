@@ -84,6 +84,7 @@ h1,h2,h3{font-weight:400}
 
 /* números animados (js/app.js conta de 0 até data-count quando aparecem na tela) */
 .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats-5{grid-template-columns:repeat(5,minmax(0,1fr))}
 .stat{padding:40px 28px 36px}
 .stat + .stat{border-left:1px solid var(--line)}
 .stat b{display:block;font-weight:300;font-size:clamp(44px,4.6vw,64px);line-height:1;letter-spacing:-.04em;color:var(--tx);font-variant-numeric:tabular-nums}
@@ -140,7 +141,8 @@ h1,h2,h3{font-weight:400}
 
 @media (max-width:1024px){
   .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .stat:nth-child(3){border-left:0}
+  .stat:nth-child(odd){border-left:0}
+  .stats-5 .stat:last-child{grid-column:1 / -1}
   .stat:nth-child(n+3){border-top:1px solid var(--line)}
   .dep-g{grid-template-columns:minmax(0,1fr);max-width:560px}
   .vid-wide{aspect-ratio:16/9}

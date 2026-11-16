@@ -179,20 +179,62 @@ var DEPOIMENTOS_PACIENTES = [
     }
   }
 
+  /* ---------- Cursos: contagem regressiva ----------
+     data-cd usa -03:00, o fuso de America/Sao_Paulo (sem horário de verão desde 2019).
+     Fica escondida sem JS e some quando a data passa. */
+  var cd = document.querySelector('[data-cd]');
+  if (cd) {
+    var target = Date.parse(cd.getAttribute('data-cd'));
+    var two = function (n) { return (n < 10 ? '0' : '') + n; };
+    var cdTimer = null;
+    var tick = function () {
+      var ms = target - Date.now();
+      if (!(ms > 0)) { cd.hidden = true; if (cdTimer) clearInterval(cdTimer); return; }
+      var min = Math.floor(ms / 60000);
+      cd.querySelector('[data-cd-d]').textContent = two(Math.floor(min / 1440));
+      cd.querySelector('[data-cd-h]').textContent = two(Math.floor((min % 1440) / 60));
+      cd.querySelector('[data-cd-m]').textContent = two(min % 60);
+      cd.hidden = false;
+    };
+    tick();
+    if (!cd.hidden) cdTimer = setInterval(tick, 20000);
+  }
+
+  /* ---------- Cursos: copiar a lista do que levar ---------- */
+  var copyBtn = document.querySelector('[data-copy-list]');
+  if (copyBtn) {
+    var okMsg = document.querySelector('.lev-ok');
+    copyBtn.addEventListener('click', function () {
+      var items = Array.prototype.map.call(document.querySelectorAll('.chk .chk-t'), function (el) { return '• ' + el.textContent.trim(); });
+      var text = 'O que levar para a Imersão Esthetic Pro 2027:\n' + items.join('\n');
+      var done = function (ok) { okMsg.textContent = ok ? 'Lista copiada!' : 'Não deu para copiar. Seleciona a lista e copia manualmente.'; setTimeout(function () { okMsg.textContent = ''; }, 3500); };
+      var fallback = function () {
+        var ta = document.createElement('textarea'); ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        var ok = false; try { ok = document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(ta); done(ok);
+      };
+      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(function () { done(true); }, fallback);
+      else fallback();
+    });
+  }
+
   /* ---------- Cursos: contato pelo WhatsApp (valores e condições são combinados na conversa) ---------- */
   var form = document.querySelector('form.form');
   if (form) {
     var send = form.querySelector('a.btn');
     var val = function (id) { var el = document.getElementById(id); return (el && el.value.trim()) || '(não informado)'; };
+    var perfil = function () { var r = form.querySelector('input[name="f-perfil"]:checked'); return r ? r.value : '(não informado)'; };
     var update = function () {
       send.href = wa([
         'Olá, Dr. José Carlos! Vim pelo site e quero saber os valores e as condições da Imersão Esthetic Pro 2027.', '',
+        'Sou: ' + perfil(),
         'Nome: ' + val('f-nome'),
         'Cidade: ' + val('f-cidade'),
         'CRO: ' + val('f-cro')
       ].join('\n'));
     };
-    form.querySelectorAll('input').forEach(function (i) { i.addEventListener('input', update); });
+    form.querySelectorAll('input').forEach(function (i) { i.addEventListener('input', update); i.addEventListener('change', update); });
     form.addEventListener('submit', function (e) { e.preventDefault(); });
     update();
   }
