@@ -74,4 +74,4 @@ A lista oficial de pendências é o `PAUTA-CALL.md` (placeholders, perguntas ao 
 
 ## Medição
 - Visitas: Vercel Web Analytics.
-- Evento `whatsapp_click` com `{ origem, pagina }`: enviado para a Vercel e para o Umami Cloud (o plano Hobby da Vercel não mostra eventos personalizados). O Umami fica com a contagem automática de visitas desligada. ID do site na constante `UMAMI_WEBSITE_ID` do `js/app.js`; enquanto for `[UMAMI_WEBSITE_ID]`, o script do Umami não carrega.
+- Evento `whatsapp_click` com `{ origem, pagina }`, enviado pelo Vercel Web Analytics (`js/app.js`). No plano Hobby a Vercel não mostra eventos personalizados no painel.
