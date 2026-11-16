@@ -75,6 +75,10 @@
 .case-note{margin-top:28px;padding-top:20px;border-top:1px solid var(--line);font-size:12.5px;line-height:1.6;color:var(--mu)}
 
 /* tratamentos */
+.tl-grp{display:flex;justify-content:space-between;align-items:baseline;gap:20px;margin:0 0 14px}
+.tl + .tl-grp{margin-top:64px}
+.tl-gt{font-size:13px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--ac-ink)}
+.tl-grp span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mu)}
 .tl{border-top:1px solid var(--line)}
 .tl-r{display:grid;grid-template-columns:72px minmax(0,1.05fr) minmax(0,1.35fr) 52px;gap:28px;align-items:center;padding:34px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit;transition:padding .35s cubic-bezier(.2,.7,.2,1),background .35s}
 .tl-r:hover{padding-left:16px;padding-right:16px;background:var(--bg2)}
@@ -141,6 +145,9 @@
 .ct-list b{display:block;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--mu);font-weight:500}
 .ct-list span{display:block;margin-top:6px;font-size:16px;line-height:1.5}
 .ct-list a{text-decoration:none;border-bottom:1px solid var(--line2)}
+.map{margin-top:28px;border-radius:8px;overflow:hidden;border:1px solid var(--line2);aspect-ratio:16/10;background:var(--bg3)}
+.map iframe{display:block;width:100%;height:100%;border:0;filter:grayscale(1);transition:filter .5s}
+.map:hover iframe,.map:focus-within iframe{filter:none}
 
 @media (max-width:1024px){
   .hero-g,.casos-g,.sobre-g,.ct-g{grid-template-columns:minmax(0,1fr);gap:48px}
@@ -198,9 +205,9 @@
 <section class="hero">
 <div class="wrap hero-g">
 <div class="hero-txt">
-<p class="eyebrow rise d1">Reabilitação oral estética · Santa Maria / RS</p>
+<p class="eyebrow rise d1">Reabilitação oral estética e clínica geral · Santa Maria / RS</p>
 <h1 class="rise d2">Sorrisos planejados do primeiro traço à <em>última peça</em>.</h1>
-<p class="lead rise d3">Facetas em resina e em cerâmica, laminados, coroas e reabilitações completas, com planejamento fotográfico, indicação honesta de cada material e laboratório próprio dentro da clínica.</p>
+<p class="lead rise d3">Do clínico geral à estética, para pacientes de todas as idades: prevenção, clareamento, facetas, lentes, próteses, implantes e reabilitações completas, com indicação honesta de cada material e laboratório próprio dentro da clínica.</p>
 <div class="hero-cta rise d4">
 <a class="btn btn-ac" href="https://wa.me/5555997167672?text=Ol%C3%A1%2C%20Dr.%20Jos%C3%A9%20Carlos!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Agendar avaliação <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 <a class="btn btn-line" href="#casos">Ver casos reais</a>
@@ -213,7 +220,7 @@
 </div>
 <div class="hero-ph">
 <img class="ph" src="/img/retrato.jpg" alt="Dr. José Carlos Schenini sorrindo no consultório, com um tablet nas mãos">
-<p class="hero-badge"><i></i>Laboratório próprio · CS LAB</p>
+<p class="hero-badge"><i></i>Laboratório próprio · casos em até 24h</p>
 <div class="hero-sig"><img src="/img/sig-light.png" alt=""></div>
 </div>
 </div>
@@ -221,8 +228,8 @@
 
 <div class="mq" aria-hidden="true">
 <div class="mq-t">
-<span>Facetas em resina</span><i></i><span>Lentes de contato dental</span><i></i><span>Laminados cerâmicos</span><i></i><span>Coroas</span><i></i><span>Reabilitação oral</span><i></i><span>Implantes</span><i></i>
-<span>Facetas em resina</span><i></i><span>Lentes de contato dental</span><i></i><span>Laminados cerâmicos</span><i></i><span>Coroas</span><i></i><span>Reabilitação oral</span><i></i><span>Implantes</span><i></i>
+<span>Clínica geral</span><i></i><span>Facetas em resina</span><i></i><span>Lentes de contato dental</span><i></i><span>Laminados cerâmicos</span><i></i><span>Clareamento dental</span><i></i><span>Coroas e próteses</span><i></i><span>Reabilitação oral</span><i></i><span>Implantes</span><i></i><span>Cirurgia oral</span><i></i>
+<span>Clínica geral</span><i></i><span>Facetas em resina</span><i></i><span>Lentes de contato dental</span><i></i><span>Laminados cerâmicos</span><i></i><span>Clareamento dental</span><i></i><span>Coroas e próteses</span><i></i><span>Reabilitação oral</span><i></i><span>Implantes</span><i></i><span>Cirurgia oral</span><i></i>
 </div>
 </div>
 
@@ -230,7 +237,7 @@
 <div class="wrap">
 <div class="stats rv">
 <div class="stat"><b><span class="num" data-since="2018">8</span><small>anos</small></b><span>De formado, Cirurgião-Dentista pela UFN em 2018</span></div>
-<div class="stat"><b><span class="num" data-count="5">5</span></b><span>Tratamentos, do mais conservador à reabilitação completa</span></div>
+<div class="stat"><b><span class="num" data-count="9">9</span></b><span>Tratamentos, do clínico geral à reabilitação completa</span></div>
 <div class="stat"><b><span class="ph-hold">[nº]</span></b><span>Sorrisos planejados no consultório</span></div>
 <div class="stat"><b><span class="ph-hold">[nº]</span></b><span>Dentistas que já passaram pela Esthetic Pro</span></div>
 </div>
@@ -283,47 +290,63 @@
 <div class="sec-head rv">
 <div>
 <p class="eyebrow">Tratamentos</p>
-<h2 class="h2">O material certo <em>para cada sorriso</em>.</h2>
+<h2 class="h2">Do clínico geral <em>à estética</em>.</h2>
 </div>
-<p class="lead" style="max-width: 46ch">Resina ou cerâmica, faceta ou coroa: a escolha vem do planejamento, nunca de um pacote pronto.</p>
+<p class="lead" style="max-width: 46ch">Atendimento para todas as idades. Resina ou cerâmica, faceta ou coroa: a escolha vem do planejamento, nunca de um pacote pronto.</p>
 </div>
+<div class="tl-grp rv"><h3 class="tl-gt">Estética do sorriso</h3></div>
 <div class="tl">
-
 <a class="tl-r rv" href="https://wa.me/5555997167672?text=Ol%C3%A1%2C%20Dr.%20Jos%C3%A9%20Carlos!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20facetas%20em%20resina%20composta." target="_blank" rel="noopener">
 <span class="tl-n num" data-count="1" data-pad="2">01</span>
 <span class="tl-t">Facetas em resina composta</span>
 <span class="tl-d">Ajustes de cor, forma e tamanho em poucas sessões, com mínimo ou nenhum desgaste do dente.</span>
 <span class="tl-a" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17L17 7M9 7h8v8"></path></svg></span>
 </a>
-
 <a class="tl-r rv" href="https://wa.me/5555997167672?text=Ol%C3%A1%2C%20Dr.%20Jos%C3%A9%20Carlos!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20lentes%20e%20laminados%20cer%C3%A2micos." target="_blank" rel="noopener">
 <span class="tl-n num" data-count="2" data-pad="2">02</span>
 <span class="tl-t">Lentes e laminados cerâmicos</span>
 <span class="tl-d">Lâminas finas de cerâmica, feitas sob medida no laboratório próprio, para um sorriso natural e duradouro.</span>
 <span class="tl-a" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17L17 7M9 7h8v8"></path></svg></span>
 </a>
-
-<a class="tl-r rv" href="https://wa.me/5555997167672?text=Ol%C3%A1%2C%20Dr.%20Jos%C3%A9%20Carlos!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20coroas%20cer%C3%A2micas." target="_blank" rel="noopener">
+<a class="tl-r rv" href="https://wa.me/5555997167672?text=Ol%C3%A1%2C%20Dr.%20Jos%C3%A9%20Carlos!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20clareamento%20dental." target="_blank" rel="noopener">
 <span class="tl-n num" data-count="3" data-pad="2">03</span>
-<span class="tl-t">Coroas cerâmicas</span>
-<span class="tl-d">Para dentes com grande perda de estrutura ou tratados de canal, com aparência de dente natural.</span>
+<span class="tl-t">Clareamento dental</span>
+<span class="tl-d">Avaliação antes de começar, técnica indicada para o seu caso e acompanhamento do dentista durante todo o tratamento.</span>
 <span class="tl-a" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17L17 7M9 7h8v8"></path></svg></span>
 </a>
-
-<a class="tl-r rv" href="https://wa.me/5555997167672?text=Ol%C3%A1%2C%20Dr.%20Jos%C3%A9%20Carlos!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20reabilita%C3%A7%C3%A3o%20oral." target="_blank" rel="noopener">
+</div>
+<div class="tl-grp rv"><h3 class="tl-gt">Saúde e reabilitação</h3></div>
+<div class="tl">
+<a class="tl-r rv" href="https://wa.me/5555997167672?text=Ol%C3%A1%2C%20Dr.%20Jos%C3%A9%20Carlos!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20cl%C3%ADnica%20geral." target="_blank" rel="noopener">
 <span class="tl-n num" data-count="4" data-pad="2">04</span>
+<span class="tl-t">Clínica geral</span>
+<span class="tl-d">Consultas, prevenção, limpeza e restaurações para pacientes de todas as idades.</span>
+<span class="tl-a" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17L17 7M9 7h8v8"></path></svg></span>
+</a>
+<a class="tl-r rv" href="https://wa.me/5555997167672?text=Ol%C3%A1%2C%20Dr.%20Jos%C3%A9%20Carlos!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20pr%C3%B3tese%20e%20coroas." target="_blank" rel="noopener">
+<span class="tl-n num" data-count="5" data-pad="2">05</span>
+<span class="tl-t">Prótese e coroas</span>
+<span class="tl-d">Coroas e próteses para repor dentes desgastados ou perdidos, confeccionadas no laboratório próprio da clínica.</span>
+<span class="tl-a" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17L17 7M9 7h8v8"></path></svg></span>
+</a>
+<a class="tl-r rv" href="https://wa.me/5555997167672?text=Ol%C3%A1%2C%20Dr.%20Jos%C3%A9%20Carlos!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20reabilita%C3%A7%C3%A3o%20oral." target="_blank" rel="noopener">
+<span class="tl-n num" data-count="6" data-pad="2">06</span>
 <span class="tl-t">Reabilitação oral</span>
 <span class="tl-d">Planejamento global do sorriso e da mordida quando vários dentes precisam ser reconstruídos.</span>
 <span class="tl-a" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17L17 7M9 7h8v8"></path></svg></span>
 </a>
-
 <a class="tl-r rv" href="https://wa.me/5555997167672?text=Ol%C3%A1%2C%20Dr.%20Jos%C3%A9%20Carlos!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20implantes%20dent%C3%A1rios." target="_blank" rel="noopener">
-<span class="tl-n num" data-count="5" data-pad="2">05</span>
+<span class="tl-n num" data-count="7" data-pad="2">07</span>
 <span class="tl-t">Implantes dentários</span>
 <span class="tl-d">Reposição de dentes perdidos integrada ao planejamento estético do sorriso.</span>
 <span class="tl-a" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17L17 7M9 7h8v8"></path></svg></span>
 </a>
-
+<a class="tl-r rv" href="https://wa.me/5555997167672?text=Ol%C3%A1%2C%20Dr.%20Jos%C3%A9%20Carlos!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20cirurgia%20oral." target="_blank" rel="noopener">
+<span class="tl-n num" data-count="8" data-pad="2">08</span>
+<span class="tl-t">Cirurgia oral</span>
+<span class="tl-d">Extrações e outros procedimentos cirúrgicos da boca, sempre com avaliação e planejamento prévios.</span>
+<span class="tl-a" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17L17 7M9 7h8v8"></path></svg></span>
+</a>
 </div>
 </div>
 </section>
@@ -334,13 +357,14 @@
 <div>
 <p class="eyebrow">Como funciona</p>
 <h2 class="h2">Do primeiro encontro <em>ao sorriso pronto</em>.</h2>
+<p class="lead" style="margin-top: 20px; max-width: 54ch">Do check-up de rotina à reabilitação completa, para crianças, adultos e idosos: cada tratamento segue o mesmo cuidado.</p>
 </div>
 <a class="btn btn-line" href="https://wa.me/5555997167672?text=Ol%C3%A1%2C%20Dr.%20Jos%C3%A9%20Carlos!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Marcar minha avaliação</a>
 </div>
 <div class="steps">
-<div class="step rv"><p class="step-n num" data-count="1" data-pad="2">01</p><h3>Avaliação e fotografia</h3><p>Conversa sobre o que te incomoda, exame clínico e protocolo fotográfico do sorriso.</p></div>
-<div class="step rv"><p class="step-n num" data-count="2" data-pad="2">02</p><h3>Planejamento</h3><p>Escolha da técnica e do material certos para o seu caso, com vantagens e limites explicados.</p></div>
-<div class="step rv"><p class="step-n num" data-count="3" data-pad="2">03</p><h3>Execução</h3><p>Preparo, confecção das peças no laboratório próprio e prova com você presente.</p></div>
+<div class="step rv"><p class="step-n num" data-count="1" data-pad="2">01</p><h3>Avaliação e fotografia</h3><p>Conversa sobre o que você precisa, exame clínico completo e, quando indicado, fotografias do sorriso.</p></div>
+<div class="step rv"><p class="step-n num" data-count="2" data-pad="2">02</p><h3>Planejamento</h3><p>Tratamento indicado para o seu caso, com vantagens, limites e etapas explicados antes de começar.</p></div>
+<div class="step rv"><p class="step-n num" data-count="3" data-pad="2">03</p><h3>Execução</h3><p>Procedimentos no consultório e, quando há peças, confecção no laboratório próprio com prova na sua presença.</p></div>
 <div class="step rv"><p class="step-n num" data-count="4" data-pad="2">04</p><h3>Acompanhamento</h3><p>Revisões programadas para manter o resultado bonito e saudável ao longo dos anos.</p></div>
 </div>
 </div>
@@ -433,11 +457,14 @@
 <a class="ct-big" href="https://wa.me/5555997167672?text=Ol%C3%A1%2C%20Dr.%20Jos%C3%A9%20Carlos!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">(55) 99716-7672</a>
 <a class="btn btn-ac" style="margin-top: 36px" href="https://wa.me/5555997167672?text=Ol%C3%A1%2C%20Dr.%20Jos%C3%A9%20Carlos!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Chamar no WhatsApp <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
-<ul class="ct-list rv">
-<li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg><div><b>Consultório</b><span class="ph-hold">[Endereço do consultório]</span><span>Santa Maria / RS</span></div></li>
-<li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg><div><b>Atendimento</b><span class="ph-hold">[Dias e horários]</span></div></li>
+<div class="rv">
+<ul class="ct-list">
+<li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg><div><b>Consultório</b><span><a href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Euclides+Aranha+1269+Santa+Maria+RS" target="_blank" rel="noopener">Rua Euclides Aranha, 1269, sala 1 · Santa Maria / RS</a></span></div></li>
+<li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg><div><b>Atendimento</b><span>Segunda a sexta, 8h às 12h e 14h às 18h30</span></div></li>
 <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.8"></circle></svg><div><b>Instagram</b><span><a href="https://www.instagram.com/cacaloschenini/" target="_blank" rel="noopener">@cacaloschenini</a></span></div></li>
 </ul>
+<div class="map"><iframe src="https://www.google.com/maps?q=Rua+Euclides+Aranha,+1269,+Santa+Maria,+RS&amp;output=embed" title="Mapa: consultório na Rua Euclides Aranha, 1269, Santa Maria/RS" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+</div>
 </div>
 </section>
 
@@ -451,7 +478,7 @@
 </div>
 </div>
 <div class="ft-bot">
-<p>Responsável técnico: Dr. José Carlos Schenini · <span class="ph-hold">CRO-RS [número]</span> · © 2026</p>
+<p>Responsável técnico: Dr. José Carlos Schenini · CRO-RS 26.112 · © 2026</p>
 <p>Site desenvolvido por <a href="https://arthur-portfolio-lps.vercel.app" target="_blank" rel="noopener">3eTec</a></p>
 </div>
 </div>
