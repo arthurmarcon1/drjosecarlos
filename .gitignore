@@ -4,3 +4,7 @@ node_modules
 *.zip
 PROMPTS*.md
 .env*
+*.docx
+*.doc
+*.pdf
+Briefing*
