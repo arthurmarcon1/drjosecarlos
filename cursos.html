@@ -144,6 +144,19 @@
 
 /* galeria + vídeo */
 .gal-vid{margin-bottom:12px}
+/* vídeo da última edição: destaque 16:9 na largura do container */
+.evid{position:relative;aspect-ratio:16/9;border-radius:8px;overflow:hidden;background:var(--bg3);margin-bottom:12px;isolation:isolate}
+.evid-cover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%;display:block;z-index:-2}
+.evid::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(30,35,40,.55),rgba(30,35,40,.1) 60%)}
+.evid-play{position:absolute;left:50%;top:50%;width:84px;height:84px;margin:-42px 0 0 -42px;border:0;border-radius:8px;background:var(--ac);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 12px 32px rgba(30,35,40,.3);transition:transform .3s,background .2s}
+.evid-play:hover{transform:scale(1.06);background:var(--ac-h)}
+.evid-play:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.evid-tag{position:absolute;left:20px;bottom:20px;font-size:13px}
+.evid-msg{position:absolute;left:50%;top:calc(50% + 58px);transform:translateX(-50%);background:var(--card);color:var(--tx);font-size:13px;padding:8px 12px;border-radius:6px;white-space:nowrap}
+.evid-msg:empty{display:none}
+.evid video,.evid iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000;display:block}
+.evid.is-pronto .evid-tag{display:none}
+.evid.is-playing .evid-play,.evid.is-playing .evid-tag,.evid.is-playing::before{display:none}
 .gal{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:240px;gap:12px}
 .gal figure{margin:0;border-radius:8px;overflow:hidden;position:relative}
 .gal img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
@@ -216,6 +229,9 @@
   .topics{grid-template-columns:minmax(0,1fr)}
   .row2{grid-template-columns:minmax(0,1fr)}
   .day-h h3{font-size:30px}
+  .evid-play{width:64px;height:64px;margin:-32px 0 0 -32px}
+  .evid-tag{left:12px;bottom:12px;font-size:11.5px}
+  .evid-msg{top:calc(50% + 44px);white-space:normal;width:max-content;max-width:80%;text-align:center}
   .cd-k{display:none}
   .cd-u{min-width:0;padding:12px 16px}
   .lev{padding:6px 20px 24px}
@@ -452,7 +468,20 @@
 <h2 class="dd">Como é <em>estar lá</em>.</h2>
 </div>
 </div>
-<div class="gal-vid rv"><figure class="vid vid-wide"><span class="vid-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span><p>[Vídeo da imersão]</p><span>Resumo em vídeo de uma edição anterior: aula, hands-on, cimentação ao vivo e happy hour</span></figure></div>
+<!--
+  VÍDEO DA ÚLTIMA EDIÇÃO (Esthetic Pro)
+  Opção 1, arquivo no site: coloque o vídeo em /video/esthetic-pro-ultima-edicao.mp4
+  e a capa em /video/esthetic-pro-ultima-edicao.jpg (1920x1080). Não precisa mexer no HTML:
+  quando a capa existir, o site troca a foto provisória, tira o selo "em breve" e o play abre o vídeo.
+  Opção 2, YouTube não listado (melhor se o arquivo passar de ~20 MB): preencha data-youtube-id abaixo
+  com o ID do vídeo (o trecho depois de "v=" no link). Nada do YouTube carrega antes do clique no play.
+-->
+<div class="evid rv" data-video="/video/esthetic-pro-ultima-edicao.mp4" data-poster="/video/esthetic-pro-ultima-edicao.jpg" data-youtube-id="">
+<picture><source type="image/webp" srcset="/img/turma-640.webp 640w, /img/turma-1280.webp 1280w" sizes="(max-width: 1280px) 100vw, 1180px"><img class="evid-cover" src="/img/turma.jpg" alt="Turma reunida na sala de aula da imersão Esthetic Pro" width="1350" height="1800" loading="lazy" decoding="async"></picture>
+<button class="evid-play" type="button" aria-label="Assistir ao vídeo da última edição da imersão"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></button>
+<span class="evid-tag ph-hold">[Vídeo da última edição, em breve]</span>
+<p class="evid-msg" role="status" aria-live="polite"></p>
+</div>
 <div class="gal rv">
 <figure class="g-a"><picture><source type="image/webp" srcset="/img/turma-640.webp 640w, /img/turma-1280.webp 1280w" sizes="(max-width: 1024px) 100vw, 50vw"><img src="/img/turma.jpg" alt="Turma reunida na sala de aula da imersão" width="1350" height="1800" loading="lazy" decoding="async"></picture></figure>
 <figure class="g-b"><picture><source type="image/webp" srcset="/img/palestra-640.webp 640w, /img/palestra-1080.webp 1080w" sizes="(max-width: 1024px) 100vw, 50vw"><img src="/img/palestra.jpg" alt="Dr. José Carlos durante a aula teórica" width="1080" height="1620" loading="lazy" decoding="async"></picture></figure>

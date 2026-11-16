@@ -270,6 +270,46 @@ var DEPOIMENTOS_PACIENTES = [
     });
   }
 
+  /* ---------- Cursos: vídeo da última edição ----------
+     Arquivo: data-video + data-poster (em /video). Quando a capa existe, troca a foto provisória e tira o selo.
+     YouTube: se data-youtube-id tiver um ID, o play cria o iframe (nada do YouTube carrega antes do clique). */
+  document.querySelectorAll('.evid').forEach(function (box) {
+    var yt = (box.getAttribute('data-youtube-id') || '').trim();
+    var src = box.getAttribute('data-video'), poster = box.getAttribute('data-poster');
+    var cover = box.querySelector('.evid-cover'), btn = box.querySelector('.evid-play'), msg = box.querySelector('.evid-msg');
+    var hasFile = false;
+    if (yt) box.classList.add('is-pronto');
+    // testa a capa só quando o bloco chega perto da tela
+    onVisible([box], function () {
+      // Na Vercel, arquivo inexistente em /video responde 200 com texto (vercel.json), então não há 404 no console:
+      // só conta como pronto se a resposta for mesmo uma imagem.
+      if (!poster || !window.fetch) return;
+      fetch(poster, { method: 'HEAD', cache: 'no-store' }).then(function (r) {
+        if (!r.ok || !/^image\//.test(r.headers.get('content-type') || '')) return;
+        hasFile = true; box.classList.add('is-pronto');
+        var pic = cover.parentNode; var s = pic.tagName === 'PICTURE' && pic.querySelector('source');
+        if (s) s.remove();
+        cover.src = poster;
+      }).catch(function () {});
+    }, { rootMargin: '400px 0px' });
+    btn.addEventListener('click', function () {
+      msg.textContent = '';
+      if (yt) {
+        var f = document.createElement('iframe');
+        f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(yt) + '?autoplay=1&rel=0&playsinline=1';
+        f.title = 'Vídeo da última edição da imersão Esthetic Pro';
+        f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true;
+        box.appendChild(f); box.classList.add('is-playing'); return;
+      }
+      if (!hasFile) { msg.textContent = 'O vídeo da última edição chega em breve.'; return; }
+      var v = document.createElement('video');
+      v.controls = true; v.playsInline = true; v.preload = 'none'; v.poster = poster; v.src = src;
+      v.addEventListener('error', function () { v.remove(); box.classList.remove('is-playing'); msg.textContent = 'Não foi possível carregar o vídeo.'; });
+      box.appendChild(v); box.classList.add('is-playing');
+      var pr = v.play(); if (pr && pr.catch) pr.catch(function () {});   // play iniciado pelo clique (com som, sem autoplay)
+    });
+  });
+
   /* ---------- Cursos: contato pelo WhatsApp (valores e condições são combinados na conversa) ---------- */
   var form = document.querySelector('form.form');
   if (form) {
