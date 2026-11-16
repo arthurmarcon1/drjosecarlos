@@ -35,5 +35,37 @@ Stack: HTML + CSS (`css/base.css` com o que é comum às 3 páginas; o específi
 - Local: U.NOS Coworking em Saúde, Rua Pinheiro Machado, 2350, sala 610, Santa Maria/RS.
 - Dr.: natural de Itaqui/RS, Cirurgião-Dentista pela UFN em 2018, especialização em Implantodontia, membro da Sociedade Brasileira de Odontologia Reconstrutiva.
 
-## Pendências (vêm do briefing; lista detalhada em `PENDENCIAS.md`)
-CRO, endereço e horário do consultório, data e vagas da turma 2027, serviços e fotos do CS LAB, se o lab atende outros dentistas (seção "Para dentistas"), depoimentos, domínio.
+## Dados confirmados pelo cliente (briefing de nov/2026)
+
+Estes dados prevalecem sobre qualquer texto antigo do site. Ao copiar, manter a regra de nunca usar travessão.
+
+CONSULTÓRIO
+- CRO-RS 26.112
+- Endereço: Rua Euclides Aranha, 1269, sala 1, Santa Maria/RS
+- Atendimento: segunda a sexta, das 8h às 12h e das 14h às 18h30
+- Tratamentos a incluir além dos atuais: clínica geral, cirurgia oral, clareamento e prótese
+- Público: pacientes de qualquer idade
+- Tem depoimentos de pacientes (vai enviar)
+
+ESTHETIC PRO 2027
+- Data: 15 e 16 de janeiro de 2027 (sujeito a alteração)
+- Carga horária: 16h
+- Incluso: coffee break, kit de pontas diamantadas personalizado e brindes
+- O aluno leva: espátulas de resina, contra-ângulo de baixa rotação, mandril (para adaptar pontas de alta rotação na caneta de baixa) e fotopolimerizador
+- Para quem: qualquer dentista ou estudante que deseja entrar no mundo da odontologia estética
+- Já foram 3 edições. Tem depoimentos de alunos (vai enviar)
+- Inscrição: pelo WhatsApp
+
+CS LAB
+- Atende somente a própria clínica (por enquanto)
+- O técnico responsável é o próprio Dr. José Carlos
+- Entrega casos em menos de 24h
+- Serviços: trabalhos em cerâmica (coroas, facetas, lentes); trabalhos em resina impressa (coroas, facetas, provisórios, protocolo provisório); placa miorrelaxante; placas de acetato ou de clareamento; enceramento digital; impressão de modelos
+
+Reforço das regras ao usar estes dados:
+- Nunca usar travessão (— ou –), inclusive ao copiar estes dados.
+- Nunca inventar número, data ou depoimento.
+- O que faltar vira placeholder entre colchetes.
+
+## Pendências (lista detalhada em `PENDENCIAS.md`)
+Números que faltam (sorrisos planejados, alunos das edições), depoimentos de pacientes e alunos (o cliente vai enviar), vídeos, fotos do CS LAB, domínio.
